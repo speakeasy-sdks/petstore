@@ -2,5 +2,7 @@
 
 ## Overview
 
+An Example Petstore API
+
 ### Available Operations
 

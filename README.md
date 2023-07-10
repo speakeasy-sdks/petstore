@@ -20,11 +20,13 @@ yarn add https://github.com/speakeasy-sdks/petstore
 <!-- Start SDK Example Usage -->
 ```typescript
 import { Pb } from "petstore";
-import { CreatePetsResponse } from "petstore/dist/sdk/models/operations";
+import { DeleteAnimalsIdResponse } from "petstore/dist/sdk/models/operations";
 
 const sdk = new Pb();
 
-sdk.pets.createPets().then((res: CreatePetsResponse) => {
+sdk.animals.deleteAnimalsId({
+  id: "89bd9d8d-69a6-474e-8f46-7cc8796ed151",
+}).then((res: DeleteAnimalsIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -36,11 +38,12 @@ sdk.pets.createPets().then((res: CreatePetsResponse) => {
 ## Available Resources and Operations
 
 
-### [pets](docs/sdks/pets/README.md)
+### [animals](docs/sdks/animals/README.md)
 
-* [createPets](docs/sdks/pets/README.md#createpets) - Create a pet
-* [listPets](docs/sdks/pets/README.md#listpets) - List all pets
-* [showPetById](docs/sdks/pets/README.md#showpetbyid) - Info for a specific pet
+* [deleteAnimalsId](docs/sdks/animals/README.md#deleteanimalsid) - Delete Animal Object
+* [getAnimals](docs/sdks/animals/README.md#getanimals) - Your GET endpoint
+* [patchAnimalsId](docs/sdks/animals/README.md#patchanimalsid) - Update Animal
+* [postAnimals](docs/sdks/animals/README.md#postanimals) - Post animals description
 <!-- End SDK Available Operations -->
 
 ### Maturity

@@ -6,14 +6,14 @@ import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { Expose } from "class-transformer";
 
 /**
- * unexpected error
+ * Internal Server Error
  */
 export class ErrorT extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "code" })
-    code: number;
+    code?: string;
 
     @SpeakeasyMetadata()
-    @Expose({ name: "message" })
-    message: string;
+    @Expose({ name: "description" })
+    description?: string;
 }

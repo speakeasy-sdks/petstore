@@ -6,29 +6,20 @@ import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import * as shared from "../shared";
 import { AxiosResponse } from "axios";
 
-export class ShowPetByIdRequest extends SpeakeasyBase {
-    /**
-     * The id of the pet to retrieve
-     */
-    @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=petId" })
-    petId: string;
+export class DeleteAnimalsIdRequest extends SpeakeasyBase {
+    @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=id" })
+    id: string;
 }
 
-export class ShowPetByIdResponse extends SpeakeasyBase {
+export class DeleteAnimalsIdResponse extends SpeakeasyBase {
     @SpeakeasyMetadata()
     contentType: string;
 
     /**
-     * unexpected error
+     * Internal Server Error
      */
     @SpeakeasyMetadata()
     error?: shared.ErrorT;
-
-    /**
-     * Expected response to a valid request
-     */
-    @SpeakeasyMetadata()
-    pet?: shared.Pet;
 
     @SpeakeasyMetadata()
     statusCode: number;

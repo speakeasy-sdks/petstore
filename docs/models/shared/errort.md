@@ -1,11 +1,11 @@
 # ErrorT
 
-unexpected error
+Internal Server Error
 
 
 ## Fields
 
 | Field              | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
-| `code`             | *number*           | :heavy_check_mark: | N/A                |
-| `message`          | *string*           | :heavy_check_mark: | N/A                |
+| `code`             | *string*           | :heavy_minus_sign: | N/A                |
+| `description`      | *string*           | :heavy_minus_sign: | N/A                |

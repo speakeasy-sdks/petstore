@@ -6,18 +6,22 @@ import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { Expose } from "class-transformer";
 
 /**
- * Expected response to a valid request
+ * OK
  */
-export class Pet extends SpeakeasyBase {
+export class Animals extends SpeakeasyBase {
+    @SpeakeasyMetadata()
+    @Expose({ name: "age" })
+    age?: number;
+
+    @SpeakeasyMetadata()
+    @Expose({ name: "color" })
+    color?: string;
+
     @SpeakeasyMetadata()
     @Expose({ name: "id" })
-    id: number;
+    id?: string;
 
     @SpeakeasyMetadata()
     @Expose({ name: "name" })
-    name: string;
-
-    @SpeakeasyMetadata()
-    @Expose({ name: "tag" })
-    tag?: string;
+    name?: string;
 }
