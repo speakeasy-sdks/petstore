@@ -5,32 +5,21 @@
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import * as shared from "../shared";
 import { AxiosResponse } from "axios";
-import { Expose } from "class-transformer";
 
-export class PostAnimalsSecurity extends SpeakeasyBase {
+export class UpdateAnimalsByIdSecurity extends SpeakeasyBase {
     @SpeakeasyMetadata({ data: "security, scheme=true;type=oauth2;name=Authorization" })
     key1: string;
 }
 
-export class PostAnimalsRequestBody extends SpeakeasyBase {
-    @SpeakeasyMetadata()
-    @Expose({ name: "age" })
-    age?: number;
+export class UpdateAnimalsByIdRequest extends SpeakeasyBase {
+    @SpeakeasyMetadata({ data: "request, media_type=application/json" })
+    animals?: shared.Animals;
 
-    @SpeakeasyMetadata()
-    @Expose({ name: "color" })
-    color: string;
-
-    @SpeakeasyMetadata()
-    @Expose({ name: "id" })
+    @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=id" })
     id: string;
-
-    @SpeakeasyMetadata()
-    @Expose({ name: "name" })
-    name: string;
 }
 
-export class PostAnimalsResponse extends SpeakeasyBase {
+export class UpdateAnimalsByIdResponse extends SpeakeasyBase {
     /**
      * OK
      */

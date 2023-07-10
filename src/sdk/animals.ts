@@ -19,17 +19,100 @@ export class Animals {
     }
 
     /**
+     * create an animal
+     *
+     * @remarks
+     * Post animals description
+     */
+    async createAnimal(
+        req: operations.CreateAnimalRequestBody,
+        security: operations.CreateAnimalSecurity,
+        config?: AxiosRequestConfig
+    ): Promise<operations.CreateAnimalResponse> {
+        if (!(req instanceof utils.SpeakeasyBase)) {
+            req = new operations.CreateAnimalRequestBody(req);
+        }
+
+        const baseURL: string = utils.templateUrl(
+            this.sdkConfiguration.serverURL,
+            this.sdkConfiguration.serverDefaults
+        );
+        const url: string = baseURL.replace(/\/$/, "") + "/animals";
+
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+
+        try {
+            [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "request", "json");
+        } catch (e: unknown) {
+            if (e instanceof Error) {
+                throw new Error(`Error serializing request body, cause: ${e.message}`);
+            }
+        }
+
+        if (!(security instanceof utils.SpeakeasyBase)) {
+            security = new operations.CreateAnimalSecurity(security);
+        }
+        const client: AxiosInstance = utils.createSecurityClient(
+            this.sdkConfiguration.defaultClient,
+            security
+        );
+
+        const headers = { ...reqBodyHeaders, ...config?.headers };
+        headers["Accept"] = "application/json;q=1, application/json;q=0";
+        headers[
+            "user-agent"
+        ] = `speakeasy-sdk/${this.sdkConfiguration.language} ${this.sdkConfiguration.sdkVersion} ${this.sdkConfiguration.genVersion} ${this.sdkConfiguration.openapiDocVersion}`;
+
+        const httpRes: AxiosResponse = await client.request({
+            validateStatus: () => true,
+            url: url,
+            method: "post",
+            headers: headers,
+            responseType: "arraybuffer",
+            data: reqBody,
+            ...config,
+        });
+
+        const contentType: string = httpRes?.headers?.["content-type"] ?? "";
+
+        if (httpRes?.status == null) {
+            throw new Error(`status code not found in response: ${httpRes}`);
+        }
+
+        const res: operations.CreateAnimalResponse = new operations.CreateAnimalResponse({
+            statusCode: httpRes.status,
+            contentType: contentType,
+            rawResponse: httpRes,
+        });
+        const decodedRes = new TextDecoder().decode(httpRes?.data);
+        switch (true) {
+            case httpRes?.status == 200:
+                if (utils.matchContentType(contentType, `application/json`)) {
+                    res.animals = utils.objectToClass(JSON.parse(decodedRes), shared.Animals);
+                }
+                break;
+            case httpRes?.status == 500:
+                if (utils.matchContentType(contentType, `application/json`)) {
+                    res.error = utils.objectToClass(JSON.parse(decodedRes), shared.ErrorT);
+                }
+                break;
+        }
+
+        return res;
+    }
+
+    /**
      * Delete Animal Object
      *
      * @remarks
      * Delete the animal
      */
-    async deleteAnimalsId(
-        req: operations.DeleteAnimalsIdRequest,
+    async deleteAnimalsById(
+        req: operations.DeleteAnimalsByIdRequest,
         config?: AxiosRequestConfig
-    ): Promise<operations.DeleteAnimalsIdResponse> {
+    ): Promise<operations.DeleteAnimalsByIdResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.DeleteAnimalsIdRequest(req);
+            req = new operations.DeleteAnimalsByIdRequest(req);
         }
 
         const baseURL: string = utils.templateUrl(
@@ -61,7 +144,7 @@ export class Animals {
             throw new Error(`status code not found in response: ${httpRes}`);
         }
 
-        const res: operations.DeleteAnimalsIdResponse = new operations.DeleteAnimalsIdResponse({
+        const res: operations.DeleteAnimalsByIdResponse = new operations.DeleteAnimalsByIdResponse({
             statusCode: httpRes.status,
             contentType: contentType,
             rawResponse: httpRes,
@@ -86,12 +169,12 @@ export class Animals {
      * @remarks
      * Get Animals Description
      */
-    async getAnimals(
-        req: operations.GetAnimalsRequest,
+    async getAllAnimals(
+        req: operations.GetAllAnimalsRequest,
         config?: AxiosRequestConfig
-    ): Promise<operations.GetAnimalsResponse> {
+    ): Promise<operations.GetAllAnimalsResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.GetAnimalsRequest(req);
+            req = new operations.GetAllAnimalsRequest(req);
         }
 
         const baseURL: string = utils.templateUrl(
@@ -124,7 +207,7 @@ export class Animals {
             throw new Error(`status code not found in response: ${httpRes}`);
         }
 
-        const res: operations.GetAnimalsResponse = new operations.GetAnimalsResponse({
+        const res: operations.GetAllAnimalsResponse = new operations.GetAllAnimalsResponse({
             statusCode: httpRes.status,
             contentType: contentType,
             rawResponse: httpRes,
@@ -153,18 +236,79 @@ export class Animals {
     }
 
     /**
+     * Get All data
+     *
+     * @remarks
+     * get All data
+     */
+    async getAllData(
+        req: operations.GetAllDataRequest,
+        config?: AxiosRequestConfig
+    ): Promise<operations.GetAllDataResponse> {
+        if (!(req instanceof utils.SpeakeasyBase)) {
+            req = new operations.GetAllDataRequest(req);
+        }
+
+        const baseURL: string = utils.templateUrl(
+            this.sdkConfiguration.serverURL,
+            this.sdkConfiguration.serverDefaults
+        );
+        const url: string = baseURL.replace(/\/$/, "") + "/all";
+
+        const client: AxiosInstance = this.sdkConfiguration.defaultClient;
+
+        const headers = { ...config?.headers };
+        const queryParams: string = utils.serializeQueryParams(req);
+        headers["Accept"] = "application/json";
+        headers[
+            "user-agent"
+        ] = `speakeasy-sdk/${this.sdkConfiguration.language} ${this.sdkConfiguration.sdkVersion} ${this.sdkConfiguration.genVersion} ${this.sdkConfiguration.openapiDocVersion}`;
+
+        const httpRes: AxiosResponse = await client.request({
+            validateStatus: () => true,
+            url: url + queryParams,
+            method: "get",
+            headers: headers,
+            responseType: "arraybuffer",
+            ...config,
+        });
+
+        const contentType: string = httpRes?.headers?.["content-type"] ?? "";
+
+        if (httpRes?.status == null) {
+            throw new Error(`status code not found in response: ${httpRes}`);
+        }
+
+        const res: operations.GetAllDataResponse = new operations.GetAllDataResponse({
+            statusCode: httpRes.status,
+            contentType: contentType,
+            rawResponse: httpRes,
+        });
+        const decodedRes = new TextDecoder().decode(httpRes?.data);
+        switch (true) {
+            case httpRes?.status == 200:
+                if (utils.matchContentType(contentType, `application/json`)) {
+                    res.getAllData200ApplicationJSONObject = JSON.parse(decodedRes);
+                }
+                break;
+        }
+
+        return res;
+    }
+
+    /**
      * Update Animal
      *
      * @remarks
      * Update the animal object
      */
-    async patchAnimalsId(
-        req: operations.PatchAnimalsIdRequest,
-        security: operations.PatchAnimalsIdSecurity,
+    async updateAnimalsById(
+        req: operations.UpdateAnimalsByIdRequest,
+        security: operations.UpdateAnimalsByIdSecurity,
         config?: AxiosRequestConfig
-    ): Promise<operations.PatchAnimalsIdResponse> {
+    ): Promise<operations.UpdateAnimalsByIdResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.PatchAnimalsIdRequest(req);
+            req = new operations.UpdateAnimalsByIdRequest(req);
         }
 
         const baseURL: string = utils.templateUrl(
@@ -184,7 +328,7 @@ export class Animals {
         }
 
         if (!(security instanceof utils.SpeakeasyBase)) {
-            security = new operations.PatchAnimalsIdSecurity(security);
+            security = new operations.UpdateAnimalsByIdSecurity(security);
         }
         const client: AxiosInstance = utils.createSecurityClient(
             this.sdkConfiguration.defaultClient,
@@ -213,87 +357,7 @@ export class Animals {
             throw new Error(`status code not found in response: ${httpRes}`);
         }
 
-        const res: operations.PatchAnimalsIdResponse = new operations.PatchAnimalsIdResponse({
-            statusCode: httpRes.status,
-            contentType: contentType,
-            rawResponse: httpRes,
-        });
-        const decodedRes = new TextDecoder().decode(httpRes?.data);
-        switch (true) {
-            case httpRes?.status == 200:
-                if (utils.matchContentType(contentType, `application/json`)) {
-                    res.animals = utils.objectToClass(JSON.parse(decodedRes), shared.Animals);
-                }
-                break;
-            case httpRes?.status == 500:
-                if (utils.matchContentType(contentType, `application/json`)) {
-                    res.error = utils.objectToClass(JSON.parse(decodedRes), shared.ErrorT);
-                }
-                break;
-        }
-
-        return res;
-    }
-
-    /**
-     * Post animals description
-     */
-    async postAnimals(
-        req: operations.PostAnimalsRequestBody,
-        security: operations.PostAnimalsSecurity,
-        config?: AxiosRequestConfig
-    ): Promise<operations.PostAnimalsResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.PostAnimalsRequestBody(req);
-        }
-
-        const baseURL: string = utils.templateUrl(
-            this.sdkConfiguration.serverURL,
-            this.sdkConfiguration.serverDefaults
-        );
-        const url: string = baseURL.replace(/\/$/, "") + "/animals";
-
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
-
-        try {
-            [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "request", "json");
-        } catch (e: unknown) {
-            if (e instanceof Error) {
-                throw new Error(`Error serializing request body, cause: ${e.message}`);
-            }
-        }
-
-        if (!(security instanceof utils.SpeakeasyBase)) {
-            security = new operations.PostAnimalsSecurity(security);
-        }
-        const client: AxiosInstance = utils.createSecurityClient(
-            this.sdkConfiguration.defaultClient,
-            security
-        );
-
-        const headers = { ...reqBodyHeaders, ...config?.headers };
-        headers["Accept"] = "application/json;q=1, application/json;q=0";
-        headers[
-            "user-agent"
-        ] = `speakeasy-sdk/${this.sdkConfiguration.language} ${this.sdkConfiguration.sdkVersion} ${this.sdkConfiguration.genVersion} ${this.sdkConfiguration.openapiDocVersion}`;
-
-        const httpRes: AxiosResponse = await client.request({
-            validateStatus: () => true,
-            url: url,
-            method: "post",
-            headers: headers,
-            responseType: "arraybuffer",
-            data: reqBody,
-            ...config,
-        });
-
-        const contentType: string = httpRes?.headers?.["content-type"] ?? "";
-
-        if (httpRes?.status == null) {
-            throw new Error(`status code not found in response: ${httpRes}`);
-        }
-
-        const res: operations.PostAnimalsResponse = new operations.PostAnimalsResponse({
+        const res: operations.UpdateAnimalsByIdResponse = new operations.UpdateAnimalsByIdResponse({
             statusCode: httpRes.status,
             contentType: contentType,
             rawResponse: httpRes,

@@ -1,4 +1,4 @@
-# PatchAnimalsIdResponse
+# CreateAnimalResponse
 
 
 ## Fields

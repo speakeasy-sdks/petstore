@@ -6,12 +6,13 @@ import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import * as shared from "../shared";
 import { AxiosResponse } from "axios";
 
-export class DeleteAnimalsIdRequest extends SpeakeasyBase {
-    @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=id" })
-    id: string;
-}
+export class GetAllBirdsResponse extends SpeakeasyBase {
+    /**
+     * OK
+     */
+    @SpeakeasyMetadata({ elemType: shared.Birds })
+    birds?: shared.Birds[];
 
-export class DeleteAnimalsIdResponse extends SpeakeasyBase {
     @SpeakeasyMetadata()
     contentType: string;
 

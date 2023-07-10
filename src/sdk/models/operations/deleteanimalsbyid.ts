@@ -6,26 +6,12 @@ import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import * as shared from "../shared";
 import { AxiosResponse } from "axios";
 
-export class PatchAnimalsIdSecurity extends SpeakeasyBase {
-    @SpeakeasyMetadata({ data: "security, scheme=true;type=oauth2;name=Authorization" })
-    key1: string;
-}
-
-export class PatchAnimalsIdRequest extends SpeakeasyBase {
-    @SpeakeasyMetadata({ data: "request, media_type=application/json" })
-    animals?: shared.Animals;
-
+export class DeleteAnimalsByIdRequest extends SpeakeasyBase {
     @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=id" })
     id: string;
 }
 
-export class PatchAnimalsIdResponse extends SpeakeasyBase {
-    /**
-     * OK
-     */
-    @SpeakeasyMetadata()
-    animals?: shared.Animals;
-
+export class DeleteAnimalsByIdResponse extends SpeakeasyBase {
     @SpeakeasyMetadata()
     contentType: string;
 

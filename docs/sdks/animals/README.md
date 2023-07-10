@@ -6,26 +6,32 @@ Work with Animals.
 
 ### Available Operations
 
-* [deleteAnimalsId](#deleteanimalsid) - Delete Animal Object
-* [getAnimals](#getanimals) - Your GET endpoint
-* [patchAnimalsId](#patchanimalsid) - Update Animal
-* [postAnimals](#postanimals) - Post animals description
+* [createAnimal](#createanimal) - create an animal
+* [deleteAnimalsById](#deleteanimalsbyid) - Delete Animal Object
+* [getAllAnimals](#getallanimals) - Your GET endpoint
+* [getAllData](#getalldata) - Get All data
+* [updateAnimalsById](#updateanimalsbyid) - Update Animal
 
-## deleteAnimalsId
+## createAnimal
 
-Delete the animal
+Post animals description
 
 ### Example Usage
 
 ```typescript
 import { Pb } from "petstore";
-import { DeleteAnimalsIdResponse } from "petstore/dist/sdk/models/operations";
+import { CreateAnimalResponse } from "petstore/dist/sdk/models/operations";
 
 const sdk = new Pb();
 
-sdk.animals.deleteAnimalsId({
-  id: "a05dfc2d-df7c-4c78-8a1b-a928fc816742",
-}).then((res: DeleteAnimalsIdResponse) => {
+sdk.animals.createAnimal({
+  age: 870013,
+  color: "at",
+  id: "f7cc78ca-1ba9-428f-8816-742cb7392059",
+  name: "Sheryl Fadel",
+}, {
+  key1: "",
+}).then((res: CreateAnimalResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -34,18 +40,53 @@ sdk.animals.deleteAnimalsId({
 
 ### Parameters
 
-| Parameter                                                                              | Type                                                                                   | Required                                                                               | Description                                                                            |
-| -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
-| `request`                                                                              | [operations.DeleteAnimalsIdRequest](../../models/operations/deleteanimalsidrequest.md) | :heavy_check_mark:                                                                     | The request object to use for the request.                                             |
-| `config`                                                                               | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                           | :heavy_minus_sign:                                                                     | Available config options for making requests.                                          |
+| Parameter                                                                                | Type                                                                                     | Required                                                                                 | Description                                                                              |
+| ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
+| `request`                                                                                | [operations.CreateAnimalRequestBody](../../models/operations/createanimalrequestbody.md) | :heavy_check_mark:                                                                       | The request object to use for the request.                                               |
+| `security`                                                                               | [operations.CreateAnimalSecurity](../../models/operations/createanimalsecurity.md)       | :heavy_check_mark:                                                                       | The security requirements to use for the request.                                        |
+| `config`                                                                                 | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                             | :heavy_minus_sign:                                                                       | Available config options for making requests.                                            |
 
 
 ### Response
 
-**Promise<[operations.DeleteAnimalsIdResponse](../../models/operations/deleteanimalsidresponse.md)>**
+**Promise<[operations.CreateAnimalResponse](../../models/operations/createanimalresponse.md)>**
 
 
-## getAnimals
+## deleteAnimalsById
+
+Delete the animal
+
+### Example Usage
+
+```typescript
+import { Pb } from "petstore";
+import { DeleteAnimalsByIdResponse } from "petstore/dist/sdk/models/operations";
+
+const sdk = new Pb();
+
+sdk.animals.deleteAnimalsById({
+  id: "fea7596e-b10f-4aaa-a352-c5955907aff1",
+}).then((res: DeleteAnimalsByIdResponse) => {
+  if (res.statusCode == 200) {
+    // handle response
+  }
+});
+```
+
+### Parameters
+
+| Parameter                                                                                  | Type                                                                                       | Required                                                                                   | Description                                                                                |
+| ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ |
+| `request`                                                                                  | [operations.DeleteAnimalsByIdRequest](../../models/operations/deleteanimalsbyidrequest.md) | :heavy_check_mark:                                                                         | The request object to use for the request.                                                 |
+| `config`                                                                                   | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                               | :heavy_minus_sign:                                                                         | Available config options for making requests.                                              |
+
+
+### Response
+
+**Promise<[operations.DeleteAnimalsByIdResponse](../../models/operations/deleteanimalsbyidresponse.md)>**
+
+
+## getAllAnimals
 
 Get Animals Description
 
@@ -53,16 +94,52 @@ Get Animals Description
 
 ```typescript
 import { Pb } from "petstore";
-import { GetAnimalsResponse } from "petstore/dist/sdk/models/operations";
+import { GetAllAnimalsResponse } from "petstore/dist/sdk/models/operations";
 
 const sdk = new Pb();
 
-sdk.animals.getAnimals({
-  age: "impedit",
-  color: "cum",
-  id: "73920592-9396-4fea-b596-eb10faaa2352",
-  name: "Ronnie Mohr",
-}).then((res: GetAnimalsResponse) => {
+sdk.animals.getAllAnimals({
+  age: "mollitia",
+  color: "dolorem",
+  id: "a2fa9467-7392-451a-a52c-3f5ad019da1f",
+  name: "Caleb Koss",
+}).then((res: GetAllAnimalsResponse) => {
+  if (res.statusCode == 200) {
+    // handle response
+  }
+});
+```
+
+### Parameters
+
+| Parameter                                                                          | Type                                                                               | Required                                                                           | Description                                                                        |
+| ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
+| `request`                                                                          | [operations.GetAllAnimalsRequest](../../models/operations/getallanimalsrequest.md) | :heavy_check_mark:                                                                 | The request object to use for the request.                                         |
+| `config`                                                                           | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                       | :heavy_minus_sign:                                                                 | Available config options for making requests.                                      |
+
+
+### Response
+
+**Promise<[operations.GetAllAnimalsResponse](../../models/operations/getallanimalsresponse.md)>**
+
+
+## getAllData
+
+get All data
+
+### Example Usage
+
+```typescript
+import { Pb } from "petstore";
+import { GetAllDataResponse } from "petstore/dist/sdk/models/operations";
+
+const sdk = new Pb();
+
+sdk.animals.getAllData({
+  filter: [
+    "omnis",
+  ],
+}).then((res: GetAllDataResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -73,16 +150,16 @@ sdk.animals.getAnimals({
 
 | Parameter                                                                    | Type                                                                         | Required                                                                     | Description                                                                  |
 | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- |
-| `request`                                                                    | [operations.GetAnimalsRequest](../../models/operations/getanimalsrequest.md) | :heavy_check_mark:                                                           | The request object to use for the request.                                   |
+| `request`                                                                    | [operations.GetAllDataRequest](../../models/operations/getalldatarequest.md) | :heavy_check_mark:                                                           | The request object to use for the request.                                   |
 | `config`                                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                 | :heavy_minus_sign:                                                           | Available config options for making requests.                                |
 
 
 ### Response
 
-**Promise<[operations.GetAnimalsResponse](../../models/operations/getanimalsresponse.md)>**
+**Promise<[operations.GetAllDataResponse](../../models/operations/getalldataresponse.md)>**
 
 
-## patchAnimalsId
+## updateAnimalsById
 
 Update the animal object
 
@@ -90,21 +167,21 @@ Update the animal object
 
 ```typescript
 import { Pb } from "petstore";
-import { PatchAnimalsIdResponse } from "petstore/dist/sdk/models/operations";
+import { UpdateAnimalsByIdResponse } from "petstore/dist/sdk/models/operations";
 
 const sdk = new Pb();
 
-sdk.animals.patchAnimalsId({
+sdk.animals.updateAnimalsById({
   animals: {
-    age: 570197,
-    color: "accusantium",
-    id: "7aff1a3a-2fa9-4467-b392-51aa52c3f5ad",
-    name: "Joyce Mueller",
+    age: 451159,
+    color: "cum",
+    id: "0074f154-71b5-4e6e-93b9-9d488e1e91e4",
+    name: "Elizabeth Orn",
   },
-  id: "1ffe78f0-97b0-4074-b154-71b5e6e13b99",
+  id: "abd44269-802d-4502-a94b-b4f63c969e9a",
 }, {
   key1: "",
-}).then((res: PatchAnimalsIdResponse) => {
+}).then((res: UpdateAnimalsByIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -113,54 +190,14 @@ sdk.animals.patchAnimalsId({
 
 ### Parameters
 
-| Parameter                                                                              | Type                                                                                   | Required                                                                               | Description                                                                            |
-| -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
-| `request`                                                                              | [operations.PatchAnimalsIdRequest](../../models/operations/patchanimalsidrequest.md)   | :heavy_check_mark:                                                                     | The request object to use for the request.                                             |
-| `security`                                                                             | [operations.PatchAnimalsIdSecurity](../../models/operations/patchanimalsidsecurity.md) | :heavy_check_mark:                                                                     | The security requirements to use for the request.                                      |
-| `config`                                                                               | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                           | :heavy_minus_sign:                                                                     | Available config options for making requests.                                          |
+| Parameter                                                                                    | Type                                                                                         | Required                                                                                     | Description                                                                                  |
+| -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
+| `request`                                                                                    | [operations.UpdateAnimalsByIdRequest](../../models/operations/updateanimalsbyidrequest.md)   | :heavy_check_mark:                                                                           | The request object to use for the request.                                                   |
+| `security`                                                                                   | [operations.UpdateAnimalsByIdSecurity](../../models/operations/updateanimalsbyidsecurity.md) | :heavy_check_mark:                                                                           | The security requirements to use for the request.                                            |
+| `config`                                                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                 | :heavy_minus_sign:                                                                           | Available config options for making requests.                                                |
 
 
 ### Response
 
-**Promise<[operations.PatchAnimalsIdResponse](../../models/operations/patchanimalsidresponse.md)>**
-
-
-## postAnimals
-
-Post animals description
-
-### Example Usage
-
-```typescript
-import { Pb } from "petstore";
-import { PostAnimalsResponse } from "petstore/dist/sdk/models/operations";
-
-const sdk = new Pb();
-
-sdk.animals.postAnimals({
-  age: 865103,
-  color: "modi",
-  id: "88e1e91e-450a-4d2a-bd44-269802d502a9",
-  name: "Olivia Rice",
-}, {
-  key1: "",
-}).then((res: PostAnimalsResponse) => {
-  if (res.statusCode == 200) {
-    // handle response
-  }
-});
-```
-
-### Parameters
-
-| Parameter                                                                              | Type                                                                                   | Required                                                                               | Description                                                                            |
-| -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
-| `request`                                                                              | [operations.PostAnimalsRequestBody](../../models/operations/postanimalsrequestbody.md) | :heavy_check_mark:                                                                     | The request object to use for the request.                                             |
-| `security`                                                                             | [operations.PostAnimalsSecurity](../../models/operations/postanimalssecurity.md)       | :heavy_check_mark:                                                                     | The security requirements to use for the request.                                      |
-| `config`                                                                               | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                           | :heavy_minus_sign:                                                                     | Available config options for making requests.                                          |
-
-
-### Response
-
-**Promise<[operations.PostAnimalsResponse](../../models/operations/postanimalsresponse.md)>**
+**Promise<[operations.UpdateAnimalsByIdResponse](../../models/operations/updateanimalsbyidresponse.md)>**
 

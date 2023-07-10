@@ -3,6 +3,7 @@
  */
 
 import { Animals } from "./animals";
+import { Birds } from "./birds";
 import axios from "axios";
 import { AxiosInstance } from "axios";
 
@@ -47,7 +48,7 @@ export class SDKConfiguration {
     serverDefaults: any;
     language = "typescript";
     openapiDocVersion = "1.0";
-    sdkVersion = "1.0.2";
+    sdkVersion = "1.0.3";
     genVersion = "2.58.2";
 
     public constructor(init?: Partial<SDKConfiguration>) {
@@ -66,6 +67,10 @@ export class Pb {
      * Work with Animals.
      */
     public animals: Animals;
+    /**
+     * Birds information.
+     */
+    public birds: Birds;
 
     private sdkConfiguration: SDKConfiguration;
 
@@ -87,5 +92,6 @@ export class Pb {
         });
 
         this.animals = new Animals(this.sdkConfiguration);
+        this.birds = new Birds(this.sdkConfiguration);
     }
 }

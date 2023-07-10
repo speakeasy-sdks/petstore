@@ -1,4 +1,4 @@
-# PostAnimalsRequestBody
+# CreateAnimalRequestBody
 
 
 ## Fields

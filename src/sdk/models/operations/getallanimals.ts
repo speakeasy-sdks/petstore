@@ -6,7 +6,7 @@ import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import * as shared from "../shared";
 import { AxiosResponse } from "axios";
 
-export class GetAnimalsRequest extends SpeakeasyBase {
+export class GetAllAnimalsRequest extends SpeakeasyBase {
     @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=age" })
     age?: string;
 
@@ -20,7 +20,7 @@ export class GetAnimalsRequest extends SpeakeasyBase {
     name?: string;
 }
 
-export class GetAnimalsResponse extends SpeakeasyBase {
+export class GetAllAnimalsResponse extends SpeakeasyBase {
     /**
      * OK
      */

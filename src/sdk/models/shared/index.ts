@@ -3,4 +3,5 @@
  */
 
 export * from "./animals";
+export * from "./birds";
 export * from "./error";

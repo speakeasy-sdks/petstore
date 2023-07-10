@@ -1,4 +1,4 @@
-# GetAnimalsRequest
+# GetAllAnimalsRequest
 
 
 ## Fields
