@@ -7,6 +7,7 @@ Work with Animals.
 ### Available Operations
 
 * [createAnimal](#createanimal) - create an animal
+* [createLivingThings](#createlivingthings) - create a living thing
 * [deleteAnimalsById](#deleteanimalsbyid) - Delete Animal Object
 * [getAllAnimals](#getallanimals) - Your GET endpoint
 * [getAllLivingThings](#getalllivingthings) - Get All living things
@@ -25,10 +26,10 @@ import { CreateAnimalResponse } from "petstore/dist/sdk/models/operations";
 const sdk = new Pb();
 
 sdk.animals.createAnimal({
-  age: 11714,
-  color: "cumque",
-  id: "5fbb2587-0532-402c-b3d5-fe9b90c28909",
-  name: "Travis Zemlak",
+  age: 870013,
+  color: "at",
+  id: "f7cc78ca-1ba9-428f-8816-742cb7392059",
+  name: "Sheryl Fadel",
 }, {
   key1: "",
 }).then((res: CreateAnimalResponse) => {
@@ -52,6 +53,82 @@ sdk.animals.createAnimal({
 **Promise<[operations.CreateAnimalResponse](../../models/operations/createanimalresponse.md)>**
 
 
+## createLivingThings
+
+Create a living thing
+
+### Example Usage
+
+```typescript
+import { Pb } from "petstore";
+import { CreateLivingThingsResponse } from "petstore/dist/sdk/models/operations";
+
+const sdk = new Pb();
+
+sdk.animals.createLivingThings({
+  data: {
+    animal: [
+      {
+        age: 902599,
+        color: "fuga",
+        id: "7596eb10-faaa-4235-ac59-55907aff1a3a",
+        name: "Jaime O'Hara",
+      },
+      {
+        age: 414369,
+        color: "quam",
+        id: "739251aa-52c3-4f5a-9019-da1ffe78f097",
+        name: "Thomas Batz",
+      },
+      {
+        age: 979587,
+        color: "dicta",
+        id: "5471b5e6-e13b-499d-888e-1e91e450ad2a",
+        name: "Marty Green",
+      },
+      {
+        age: 397821,
+        color: "cupiditate",
+        id: "802d502a-94bb-44f6-bc96-9e9a3efa77df",
+        name: "Keith Gulgowski",
+      },
+    ],
+    birds: {
+      food: [
+        "aliquid",
+        "laborum",
+      ],
+      id: "e395efb9-ba88-4f3a-a699-7074ba4469b6",
+      name: "Brandon Brakus V",
+    },
+    createdDate: 590873,
+    updatedDate: 5743.25,
+  },
+  meta: {
+    hasMore: false,
+    pageNumber: 653201,
+  },
+  name: "Shaun Hammes",
+}).then((res: CreateLivingThingsResponse) => {
+  if (res.statusCode == 200) {
+    // handle response
+  }
+});
+```
+
+### Parameters
+
+| Parameter                                                    | Type                                                         | Required                                                     | Description                                                  |
+| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| `request`                                                    | [shared.ComplexObject](../../models/shared/complexobject.md) | :heavy_check_mark:                                           | The request object to use for the request.                   |
+| `config`                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config) | :heavy_minus_sign:                                           | Available config options for making requests.                |
+
+
+### Response
+
+**Promise<[operations.CreateLivingThingsResponse](../../models/operations/createlivingthingsresponse.md)>**
+
+
 ## deleteAnimalsById
 
 Delete the animal
@@ -65,7 +142,7 @@ import { DeleteAnimalsByIdResponse } from "petstore/dist/sdk/models/operations";
 const sdk = new Pb();
 
 sdk.animals.deleteAnimalsById({
-  id: "9a8d9cbf-4863-4332-bf9b-77f3a4100674",
+  id: "e2516fe4-c8b7-411e-9b7f-d2ed028921cd",
 }).then((res: DeleteAnimalsByIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -99,10 +176,10 @@ import { GetAllAnimalsResponse } from "petstore/dist/sdk/models/operations";
 const sdk = new Pb();
 
 sdk.animals.getAllAnimals({
-  age: "accusamus",
-  color: "quidem",
-  id: "f69280d1-ba77-4a89-abf7-37ae4203ce5e",
-  name: "Rosie McKenzie",
+  age: "pariatur",
+  color: "maxime",
+  id: "692601fb-576b-40d5-b0d3-0c5fbb258705",
+  name: "Ruby Auer",
 }).then((res: GetAllAnimalsResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -137,9 +214,8 @@ const sdk = new Pb();
 
 sdk.animals.getAllLivingThings({
   filter: [
-    "similique",
-    "alias",
-    "at",
+    "dolor",
+    "vero",
   ],
 }).then((res: GetAllLivingThingsResponse) => {
   if (res.statusCode == 200) {
@@ -175,12 +251,12 @@ const sdk = new Pb();
 
 sdk.animals.updateAnimalsById({
   animals: {
-    age: 311860,
-    color: "tempora",
-    id: "6ce2af7a-73cf-43be-853f-870b326b5a73",
-    name: "Norma McGlynn",
+    age: 345352,
+    color: "hic",
+    id: "e9b90c28-909b-43fe-89a8-d9cbf4863332",
+    name: "Mindy Marks",
   },
-  id: "b1a8422b-b679-4d23-a271-5bf0cbb1e31b",
+  id: "7f3a4100-674e-4bf6-9280-d1ba77a89ebf",
 }, {
   key1: "",
 }).then((res: UpdateAnimalsByIdResponse) => {
