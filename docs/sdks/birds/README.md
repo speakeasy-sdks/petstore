@@ -6,22 +6,64 @@ Birds information.
 
 ### Available Operations
 
-* [getAllBirds](#getallbirds) - Get Birds
-* [getAllData](#getalldata) - Get All data
+* [createNewBird](#createnewbird) - Create new Bird
+* [getAllLivingThings](#getalllivingthings) - Get All living things
 
-## getAllBirds
+## createNewBird
 
-Get All birds
+Create a new Bird
 
 ### Example Usage
 
 ```typescript
 import { Pb } from "petstore";
-import { GetAllBirdsResponse } from "petstore/dist/sdk/models/operations";
+import { CreateNewBirdResponse } from "petstore/dist/sdk/models/operations";
+import { NestedBirdAgeUnit } from "petstore/dist/sdk/models/shared";
 
 const sdk = new Pb();
 
-sdk.birds.getAllBirds().then((res: GetAllBirdsResponse) => {
+sdk.birds.createNewBird({
+  age: {
+    amount: 2230.81,
+    unit: NestedBirdAgeUnit.Days,
+  },
+  flight: {
+    canFly: false,
+    wings: {
+      count: 952749,
+      span: {
+        amount: 6800.56,
+        unit: "in",
+      },
+    },
+  },
+  food: [
+    "illum",
+    "maiores",
+  ],
+  id: "b14cd66a-e395-4efb-9ba8-8f3a66997074",
+  location: [
+    {
+      geography: {
+        latitude: "id",
+        longitutde: "labore",
+      },
+    },
+    {
+      geography: {
+        latitude: "labore",
+        longitutde: "suscipit",
+      },
+    },
+    {
+      geography: {
+        latitude: "natus",
+        longitutde: "nobis",
+      },
+    },
+  ],
+  name: "Mrs. Meghan Collins V",
+}).then((res: CreateNewBirdResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -32,31 +74,33 @@ sdk.birds.getAllBirds().then((res: GetAllBirdsResponse) => {
 
 | Parameter                                                    | Type                                                         | Required                                                     | Description                                                  |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| `request`                                                    | [shared.NestedBird](../../models/shared/nestedbird.md)       | :heavy_check_mark:                                           | The request object to use for the request.                   |
 | `config`                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config) | :heavy_minus_sign:                                           | Available config options for making requests.                |
 
 
 ### Response
 
-**Promise<[operations.GetAllBirdsResponse](../../models/operations/getallbirdsresponse.md)>**
+**Promise<[operations.CreateNewBirdResponse](../../models/operations/createnewbirdresponse.md)>**
 
 
-## getAllData
+## getAllLivingThings
 
-get All data
+get All living things data
 
 ### Example Usage
 
 ```typescript
 import { Pb } from "petstore";
-import { GetAllDataResponse } from "petstore/dist/sdk/models/operations";
+import { GetAllLivingThingsResponse } from "petstore/dist/sdk/models/operations";
 
 const sdk = new Pb();
 
-sdk.birds.getAllData({
+sdk.birds.getAllLivingThings({
   filter: [
-    "debitis",
+    "provident",
+    "quos",
   ],
-}).then((res: GetAllDataResponse) => {
+}).then((res: GetAllLivingThingsResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -65,13 +109,13 @@ sdk.birds.getAllData({
 
 ### Parameters
 
-| Parameter                                                                    | Type                                                                         | Required                                                                     | Description                                                                  |
-| ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- |
-| `request`                                                                    | [operations.GetAllDataRequest](../../models/operations/getalldatarequest.md) | :heavy_check_mark:                                                           | The request object to use for the request.                                   |
-| `config`                                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                 | :heavy_minus_sign:                                                           | Available config options for making requests.                                |
+| Parameter                                                                                    | Type                                                                                         | Required                                                                                     | Description                                                                                  |
+| -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
+| `request`                                                                                    | [operations.GetAllLivingThingsRequest](../../models/operations/getalllivingthingsrequest.md) | :heavy_check_mark:                                                                           | The request object to use for the request.                                                   |
+| `config`                                                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                 | :heavy_minus_sign:                                                                           | Available config options for making requests.                                                |
 
 
 ### Response
 
-**Promise<[operations.GetAllDataResponse](../../models/operations/getalldataresponse.md)>**
+**Promise<[operations.GetAllLivingThingsResponse](../../models/operations/getalllivingthingsresponse.md)>**
 

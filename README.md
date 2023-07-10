@@ -48,13 +48,13 @@ sdk.animals.createAnimal({
 * [createAnimal](docs/sdks/animals/README.md#createanimal) - create an animal
 * [deleteAnimalsById](docs/sdks/animals/README.md#deleteanimalsbyid) - Delete Animal Object
 * [getAllAnimals](docs/sdks/animals/README.md#getallanimals) - Your GET endpoint
-* [getAllData](docs/sdks/animals/README.md#getalldata) - Get All data
+* [getAllLivingThings](docs/sdks/animals/README.md#getalllivingthings) - Get All living things
 * [updateAnimalsById](docs/sdks/animals/README.md#updateanimalsbyid) - Update Animal
 
 ### [birds](docs/sdks/birds/README.md)
 
-* [getAllBirds](docs/sdks/birds/README.md#getallbirds) - Get Birds
-* [getAllData](docs/sdks/birds/README.md#getalldata) - Get All data
+* [createNewBird](docs/sdks/birds/README.md#createnewbird) - Create new Bird
+* [getAllLivingThings](docs/sdks/birds/README.md#getalllivingthings) - Get All living things
 <!-- End SDK Available Operations -->
 
 ### Maturity

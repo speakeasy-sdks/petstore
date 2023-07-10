@@ -19,22 +19,39 @@ export class Birds {
     }
 
     /**
-     * Get Birds
+     * Create new Bird
      *
      * @remarks
-     * Get All birds
+     * Create a new Bird
      */
-    async getAllBirds(config?: AxiosRequestConfig): Promise<operations.GetAllBirdsResponse> {
+    async createNewBird(
+        req: shared.NestedBird,
+        config?: AxiosRequestConfig
+    ): Promise<operations.CreateNewBirdResponse> {
+        if (!(req instanceof utils.SpeakeasyBase)) {
+            req = new shared.NestedBird(req);
+        }
+
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
         const url: string = baseURL.replace(/\/$/, "") + "/birds";
 
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+
+        try {
+            [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "request", "json");
+        } catch (e: unknown) {
+            if (e instanceof Error) {
+                throw new Error(`Error serializing request body, cause: ${e.message}`);
+            }
+        }
+
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
 
-        const headers = { ...config?.headers };
-        headers["Accept"] = "application/json;q=1, application/json;q=0";
+        const headers = { ...reqBodyHeaders, ...config?.headers };
+        headers["Accept"] = "application/json";
         headers[
             "user-agent"
         ] = `speakeasy-sdk/${this.sdkConfiguration.language} ${this.sdkConfiguration.sdkVersion} ${this.sdkConfiguration.genVersion} ${this.sdkConfiguration.openapiDocVersion}`;
@@ -42,9 +59,10 @@ export class Birds {
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
             url: url,
-            method: "get",
+            method: "post",
             headers: headers,
             responseType: "arraybuffer",
+            data: reqBody,
             ...config,
         });
 
@@ -54,7 +72,7 @@ export class Birds {
             throw new Error(`status code not found in response: ${httpRes}`);
         }
 
-        const res: operations.GetAllBirdsResponse = new operations.GetAllBirdsResponse({
+        const res: operations.CreateNewBirdResponse = new operations.CreateNewBirdResponse({
             statusCode: httpRes.status,
             contentType: contentType,
             rawResponse: httpRes,
@@ -63,18 +81,10 @@ export class Birds {
         switch (true) {
             case httpRes?.status == 200:
                 if (utils.matchContentType(contentType, `application/json`)) {
-                    res.birds = [];
-                    const resFieldDepth: number = utils.getResFieldDepth(res);
-                    res.birds = utils.objectToClass(
+                    res.createNewBird200ApplicationJSONObject = utils.objectToClass(
                         JSON.parse(decodedRes),
-                        shared.Birds,
-                        resFieldDepth
+                        operations.CreateNewBird200ApplicationJSON
                     );
-                }
-                break;
-            case httpRes?.status == 500:
-                if (utils.matchContentType(contentType, `application/json`)) {
-                    res.error = utils.objectToClass(JSON.parse(decodedRes), shared.ErrorT);
                 }
                 break;
         }
@@ -83,24 +93,24 @@ export class Birds {
     }
 
     /**
-     * Get All data
+     * Get All living things
      *
      * @remarks
-     * get All data
+     * get All living things data
      */
-    async getAllData(
-        req: operations.GetAllDataRequest,
+    async getAllLivingThings(
+        req: operations.GetAllLivingThingsRequest,
         config?: AxiosRequestConfig
-    ): Promise<operations.GetAllDataResponse> {
+    ): Promise<operations.GetAllLivingThingsResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.GetAllDataRequest(req);
+            req = new operations.GetAllLivingThingsRequest(req);
         }
 
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = baseURL.replace(/\/$/, "") + "/all";
+        const url: string = baseURL.replace(/\/$/, "") + "/living-things";
 
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
 
@@ -126,16 +136,17 @@ export class Birds {
             throw new Error(`status code not found in response: ${httpRes}`);
         }
 
-        const res: operations.GetAllDataResponse = new operations.GetAllDataResponse({
-            statusCode: httpRes.status,
-            contentType: contentType,
-            rawResponse: httpRes,
-        });
+        const res: operations.GetAllLivingThingsResponse =
+            new operations.GetAllLivingThingsResponse({
+                statusCode: httpRes.status,
+                contentType: contentType,
+                rawResponse: httpRes,
+            });
         const decodedRes = new TextDecoder().decode(httpRes?.data);
         switch (true) {
             case httpRes?.status == 200:
                 if (utils.matchContentType(contentType, `application/json`)) {
-                    res.getAllData200ApplicationJSONObject = JSON.parse(decodedRes);
+                    res.getAllLivingThings200ApplicationJSONObject = JSON.parse(decodedRes);
                 }
                 break;
         }

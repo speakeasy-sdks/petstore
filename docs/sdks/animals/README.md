@@ -9,7 +9,7 @@ Work with Animals.
 * [createAnimal](#createanimal) - create an animal
 * [deleteAnimalsById](#deleteanimalsbyid) - Delete Animal Object
 * [getAllAnimals](#getallanimals) - Your GET endpoint
-* [getAllData](#getalldata) - Get All data
+* [getAllLivingThings](#getalllivingthings) - Get All living things
 * [updateAnimalsById](#updateanimalsbyid) - Update Animal
 
 ## createAnimal
@@ -123,23 +123,23 @@ sdk.animals.getAllAnimals({
 **Promise<[operations.GetAllAnimalsResponse](../../models/operations/getallanimalsresponse.md)>**
 
 
-## getAllData
+## getAllLivingThings
 
-get All data
+get All living things data
 
 ### Example Usage
 
 ```typescript
 import { Pb } from "petstore";
-import { GetAllDataResponse } from "petstore/dist/sdk/models/operations";
+import { GetAllLivingThingsResponse } from "petstore/dist/sdk/models/operations";
 
 const sdk = new Pb();
 
-sdk.animals.getAllData({
+sdk.animals.getAllLivingThings({
   filter: [
     "omnis",
   ],
-}).then((res: GetAllDataResponse) => {
+}).then((res: GetAllLivingThingsResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -148,15 +148,15 @@ sdk.animals.getAllData({
 
 ### Parameters
 
-| Parameter                                                                    | Type                                                                         | Required                                                                     | Description                                                                  |
-| ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- |
-| `request`                                                                    | [operations.GetAllDataRequest](../../models/operations/getalldatarequest.md) | :heavy_check_mark:                                                           | The request object to use for the request.                                   |
-| `config`                                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                 | :heavy_minus_sign:                                                           | Available config options for making requests.                                |
+| Parameter                                                                                    | Type                                                                                         | Required                                                                                     | Description                                                                                  |
+| -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
+| `request`                                                                                    | [operations.GetAllLivingThingsRequest](../../models/operations/getalllivingthingsrequest.md) | :heavy_check_mark:                                                                           | The request object to use for the request.                                                   |
+| `config`                                                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                 | :heavy_minus_sign:                                                                           | Available config options for making requests.                                                |
 
 
 ### Response
 
-**Promise<[operations.GetAllDataResponse](../../models/operations/getalldataresponse.md)>**
+**Promise<[operations.GetAllLivingThingsResponse](../../models/operations/getalllivingthingsresponse.md)>**
 
 
 ## updateAnimalsById

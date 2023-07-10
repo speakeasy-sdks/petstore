@@ -236,24 +236,24 @@ export class Animals {
     }
 
     /**
-     * Get All data
+     * Get All living things
      *
      * @remarks
-     * get All data
+     * get All living things data
      */
-    async getAllData(
-        req: operations.GetAllDataRequest,
+    async getAllLivingThings(
+        req: operations.GetAllLivingThingsRequest,
         config?: AxiosRequestConfig
-    ): Promise<operations.GetAllDataResponse> {
+    ): Promise<operations.GetAllLivingThingsResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.GetAllDataRequest(req);
+            req = new operations.GetAllLivingThingsRequest(req);
         }
 
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = baseURL.replace(/\/$/, "") + "/all";
+        const url: string = baseURL.replace(/\/$/, "") + "/living-things";
 
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
 
@@ -279,16 +279,17 @@ export class Animals {
             throw new Error(`status code not found in response: ${httpRes}`);
         }
 
-        const res: operations.GetAllDataResponse = new operations.GetAllDataResponse({
-            statusCode: httpRes.status,
-            contentType: contentType,
-            rawResponse: httpRes,
-        });
+        const res: operations.GetAllLivingThingsResponse =
+            new operations.GetAllLivingThingsResponse({
+                statusCode: httpRes.status,
+                contentType: contentType,
+                rawResponse: httpRes,
+            });
         const decodedRes = new TextDecoder().decode(httpRes?.data);
         switch (true) {
             case httpRes?.status == 200:
                 if (utils.matchContentType(contentType, `application/json`)) {
-                    res.getAllData200ApplicationJSONObject = JSON.parse(decodedRes);
+                    res.getAllLivingThings200ApplicationJSONObject = JSON.parse(decodedRes);
                 }
                 break;
         }

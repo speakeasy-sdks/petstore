@@ -5,3 +5,5 @@
 export * from "./animals";
 export * from "./birds";
 export * from "./error";
+export * from "./nestedbird";
+export * from "./pagination";

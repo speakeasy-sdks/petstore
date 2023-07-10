@@ -1,4 +1,4 @@
-# GetAllData200ApplicationJson1MetaPagination
+# GetAllLivingThings200ApplicationJson1MetaPagination
 
 
 ## Fields

@@ -7,7 +7,7 @@ import * as shared from "../shared";
 import { AxiosResponse } from "axios";
 import { Expose, Type } from "class-transformer";
 
-export class GetAllDataRequest extends SpeakeasyBase {
+export class GetAllLivingThingsRequest extends SpeakeasyBase {
     /**
      * include all filters
      */
@@ -15,20 +15,27 @@ export class GetAllDataRequest extends SpeakeasyBase {
     filter?: any[];
 }
 
-export class GetAllData200ApplicationJson2MetaPagination extends SpeakeasyBase {
+export class GetAllLivingThings200ApplicationJson2Meta2Pagination extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "pageNumber" })
     pageNumber?: number;
 }
 
-export class GetAllData200ApplicationJson2Meta extends SpeakeasyBase {
+export class GetAllLivingThings200ApplicationJson2Meta2 extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "pagination" })
-    @Type(() => GetAllData200ApplicationJson2MetaPagination)
-    pagination?: GetAllData200ApplicationJson2MetaPagination;
+    @Type(() => GetAllLivingThings200ApplicationJson2Meta2Pagination)
+    pagination?: GetAllLivingThings200ApplicationJson2Meta2Pagination;
 }
 
-export class GetAllData200ApplicationJson2 extends SpeakeasyBase {
+export class GetAllLivingThings200ApplicationJson2Meta1 extends SpeakeasyBase {
+    @SpeakeasyMetadata()
+    @Expose({ name: "pagination" })
+    @Type(() => shared.Pagination)
+    pagination?: shared.Pagination;
+}
+
+export class GetAllLivingThings200ApplicationJson2 extends SpeakeasyBase {
     @SpeakeasyMetadata({ elemType: shared.Animals })
     @Expose({ name: "animals" })
     @Type(() => shared.Animals)
@@ -36,24 +43,23 @@ export class GetAllData200ApplicationJson2 extends SpeakeasyBase {
 
     @SpeakeasyMetadata()
     @Expose({ name: "meta" })
-    @Type(() => GetAllData200ApplicationJson2Meta)
-    meta?: GetAllData200ApplicationJson2Meta;
+    meta?: any;
 }
 
-export class GetAllData200ApplicationJson1MetaPagination extends SpeakeasyBase {
+export class GetAllLivingThings200ApplicationJson1MetaPagination extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "pageNumber" })
     pageNumber?: number;
 }
 
-export class GetAllData200ApplicationJson1Meta extends SpeakeasyBase {
+export class GetAllLivingThings200ApplicationJson1Meta extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "pagination" })
-    @Type(() => GetAllData200ApplicationJson1MetaPagination)
-    pagination?: GetAllData200ApplicationJson1MetaPagination;
+    @Type(() => GetAllLivingThings200ApplicationJson1MetaPagination)
+    pagination?: GetAllLivingThings200ApplicationJson1MetaPagination;
 }
 
-export class GetAllData200ApplicationJson1 extends SpeakeasyBase {
+export class GetAllLivingThings200ApplicationJson1 extends SpeakeasyBase {
     @SpeakeasyMetadata({ elemType: shared.Birds })
     @Expose({ name: "birds" })
     @Type(() => shared.Birds)
@@ -61,11 +67,11 @@ export class GetAllData200ApplicationJson1 extends SpeakeasyBase {
 
     @SpeakeasyMetadata()
     @Expose({ name: "meta" })
-    @Type(() => GetAllData200ApplicationJson1Meta)
-    meta?: GetAllData200ApplicationJson1Meta;
+    @Type(() => GetAllLivingThings200ApplicationJson1Meta)
+    meta?: GetAllLivingThings200ApplicationJson1Meta;
 }
 
-export class GetAllDataResponse extends SpeakeasyBase {
+export class GetAllLivingThingsResponse extends SpeakeasyBase {
     @SpeakeasyMetadata()
     contentType: string;
 
@@ -79,5 +85,5 @@ export class GetAllDataResponse extends SpeakeasyBase {
      * OK
      */
     @SpeakeasyMetadata()
-    getAllData200ApplicationJSONObject?: any;
+    getAllLivingThings200ApplicationJSONObject?: any;
 }

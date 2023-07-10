@@ -1,4 +1,4 @@
-# GetAllDataResponse
+# GetAllLivingThingsResponse
 
 
 ## Fields
@@ -8,4 +8,4 @@
 | `contentType`                                            | *string*                                                 | :heavy_check_mark:                                       | N/A                                                      |
 | `statusCode`                                             | *number*                                                 | :heavy_check_mark:                                       | N/A                                                      |
 | `rawResponse`                                            | [AxiosResponse>](https://axios-http.com/docs/res_schema) | :heavy_minus_sign:                                       | N/A                                                      |
-| `getAllData200ApplicationJSONObject`                     | *any*                                                    | :heavy_minus_sign:                                       | OK                                                       |
+| `getAllLivingThings200ApplicationJSONObject`             | *any*                                                    | :heavy_minus_sign:                                       | OK                                                       |

@@ -1,9 +1,0 @@
-# GetAllData200ApplicationJson2
-
-
-## Fields
-
-| Field                                                                                             | Type                                                                                              | Required                                                                                          | Description                                                                                       |
-| ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- |
-| `animals`                                                                                         | [shared.Animals](../../models/shared/animals.md)[]                                                | :heavy_minus_sign:                                                                                | N/A                                                                                               |
-| `meta`                                                                                            | [GetAllData200ApplicationJson2Meta](../../models/operations/getalldata200applicationjson2meta.md) | :heavy_minus_sign:                                                                                | N/A                                                                                               |

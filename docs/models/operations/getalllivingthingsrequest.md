@@ -1,4 +1,4 @@
-# GetAllDataRequest
+# GetAllLivingThingsRequest
 
 
 ## Fields
