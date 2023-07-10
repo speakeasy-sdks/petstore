@@ -25,10 +25,10 @@ import { CreateAnimalResponse } from "petstore/dist/sdk/models/operations";
 const sdk = new Pb();
 
 sdk.animals.createAnimal({
-  age: 870013,
-  color: "at",
-  id: "f7cc78ca-1ba9-428f-8816-742cb7392059",
-  name: "Sheryl Fadel",
+  age: 11714,
+  color: "cumque",
+  id: "5fbb2587-0532-402c-b3d5-fe9b90c28909",
+  name: "Travis Zemlak",
 }, {
   key1: "",
 }).then((res: CreateAnimalResponse) => {
@@ -65,7 +65,7 @@ import { DeleteAnimalsByIdResponse } from "petstore/dist/sdk/models/operations";
 const sdk = new Pb();
 
 sdk.animals.deleteAnimalsById({
-  id: "fea7596e-b10f-4aaa-a352-c5955907aff1",
+  id: "9a8d9cbf-4863-4332-bf9b-77f3a4100674",
 }).then((res: DeleteAnimalsByIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -99,10 +99,10 @@ import { GetAllAnimalsResponse } from "petstore/dist/sdk/models/operations";
 const sdk = new Pb();
 
 sdk.animals.getAllAnimals({
-  age: "mollitia",
-  color: "dolorem",
-  id: "a2fa9467-7392-451a-a52c-3f5ad019da1f",
-  name: "Caleb Koss",
+  age: "accusamus",
+  color: "quidem",
+  id: "f69280d1-ba77-4a89-abf7-37ae4203ce5e",
+  name: "Rosie McKenzie",
 }).then((res: GetAllAnimalsResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -137,7 +137,9 @@ const sdk = new Pb();
 
 sdk.animals.getAllLivingThings({
   filter: [
-    "omnis",
+    "similique",
+    "alias",
+    "at",
   ],
 }).then((res: GetAllLivingThingsResponse) => {
   if (res.statusCode == 200) {
@@ -173,12 +175,12 @@ const sdk = new Pb();
 
 sdk.animals.updateAnimalsById({
   animals: {
-    age: 451159,
-    color: "cum",
-    id: "0074f154-71b5-4e6e-93b9-9d488e1e91e4",
-    name: "Elizabeth Orn",
+    age: 311860,
+    color: "tempora",
+    id: "6ce2af7a-73cf-43be-853f-870b326b5a73",
+    name: "Norma McGlynn",
   },
-  id: "abd44269-802d-4502-a94b-b4f63c969e9a",
+  id: "b1a8422b-b679-4d23-a271-5bf0cbb1e31b",
 }, {
   key1: "",
 }).then((res: UpdateAnimalsByIdResponse) => {

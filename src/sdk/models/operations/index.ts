@@ -3,6 +3,7 @@
  */
 
 export * from "./createanimal";
+export * from "./createlivingthings";
 export * from "./createnewbird";
 export * from "./deleteanimalsbyid";
 export * from "./getallanimals";

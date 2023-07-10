@@ -24,45 +24,50 @@ const sdk = new Pb();
 
 sdk.birds.createNewBird({
   age: {
-    amount: 2230.81,
+    amount: 5521.93,
     unit: NestedBirdAgeUnit.Days,
   },
   flight: {
     canFly: false,
     wings: {
-      count: 952749,
+      count: 584476,
       span: {
-        amount: 6800.56,
-        unit: "in",
+        amount: 456.14,
+        unit: "delectus",
       },
     },
   },
   food: [
-    "illum",
-    "maiores",
+    "dolore",
   ],
-  id: "b14cd66a-e395-4efb-9ba8-8f3a66997074",
+  id: "43a1108e-0adc-4f4b-9218-79fce953f73e",
   location: [
     {
       geography: {
-        latitude: "id",
-        longitutde: "labore",
+        latitude: "dignissimos",
+        longitutde: "hic",
       },
     },
     {
       geography: {
-        latitude: "labore",
-        longitutde: "suscipit",
+        latitude: "distinctio",
+        longitutde: "quod",
       },
     },
     {
       geography: {
-        latitude: "natus",
-        longitutde: "nobis",
+        latitude: "odio",
+        longitutde: "similique",
+      },
+    },
+    {
+      geography: {
+        latitude: "facilis",
+        longitutde: "vero",
       },
     },
   ],
-  name: "Mrs. Meghan Collins V",
+  name: "Joanne Sporer",
 }).then((res: CreateNewBirdResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -97,8 +102,9 @@ const sdk = new Pb();
 
 sdk.birds.getAllLivingThings({
   filter: [
-    "provident",
-    "quos",
+    "impedit",
+    "aut",
+    "voluptatibus",
   ],
 }).then((res: GetAllLivingThingsResponse) => {
   if (res.statusCode == 200) {

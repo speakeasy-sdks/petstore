@@ -25,12 +25,14 @@ src/sdk/models/operations/getallanimals.ts
 src/sdk/models/operations/getalllivingthings.ts
 src/sdk/models/operations/updateanimalsbyid.ts
 src/sdk/models/operations/createnewbird.ts
+src/sdk/models/operations/createlivingthings.ts
 src/sdk/models/operations/index.ts
 src/sdk/models/shared/error.ts
 src/sdk/models/shared/animals.ts
 src/sdk/models/shared/birds.ts
 src/sdk/models/shared/pagination.ts
 src/sdk/models/shared/nestedbird.ts
+src/sdk/models/shared/complexobject.ts
 src/sdk/models/shared/index.ts
 docs/sdks/pb/README.md
 docs/sdks/animals/README.md
@@ -58,6 +60,7 @@ docs/models/operations/updateanimalsbyidresponse.md
 docs/models/operations/createnewbird200applicationjsonmeta.md
 docs/models/operations/createnewbird200applicationjson.md
 docs/models/operations/createnewbirdresponse.md
+docs/models/operations/createlivingthingsresponse.md
 docs/models/shared/errort.md
 docs/models/shared/animals.md
 docs/models/shared/birds.md
@@ -70,3 +73,7 @@ docs/models/shared/nestedbirdflight.md
 docs/models/shared/nestedbirdlocationgeography.md
 docs/models/shared/nestedbirdlocation.md
 docs/models/shared/nestedbird.md
+docs/models/shared/complexobjectdatabirds.md
+docs/models/shared/complexobjectdata.md
+docs/models/shared/complexobjectmeta2.md
+docs/models/shared/complexobject.md
