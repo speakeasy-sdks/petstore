@@ -1,6 +1,6 @@
 configVersion: 1.0.0
 management:
-  docChecksum: 82575e054fdc91ab122fa88091d0adcb
+  docChecksum: 0983be0dee5b9c598dc0c287da72e9b5
   docVersion: "1.0"
   speakeasyVersion: 1.54.0
   generationVersion: 2.58.2
@@ -13,7 +13,7 @@ generation:
   singleTagPerOp: false
   tagNamespacingDisabled: false
 typescript:
-  version: 1.0.4
+  version: 1.0.5
   author: petstore
   maxMethodParams: 0
   packageName: petstore
