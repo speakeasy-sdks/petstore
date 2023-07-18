@@ -3,6 +3,7 @@
  */
 
 import * as utils from "../internal/utils";
+import * as errors from "./models/errors";
 import * as operations from "./models/operations";
 import * as shared from "./models/shared";
 import { SDKConfiguration } from "./sdk";
@@ -89,11 +90,25 @@ export class Animals {
             case httpRes?.status == 200:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.animals = utils.objectToClass(JSON.parse(decodedRes), shared.Animals);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             case httpRes?.status == 500:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.error = utils.objectToClass(JSON.parse(decodedRes), shared.ErrorT);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -169,11 +184,25 @@ export class Animals {
                         JSON.parse(decodedRes),
                         shared.ComplexObject
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             case httpRes?.status == 500:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.error = utils.objectToClass(JSON.parse(decodedRes), shared.ErrorT);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -236,6 +265,13 @@ export class Animals {
             case httpRes?.status == 500:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.error = utils.objectToClass(JSON.parse(decodedRes), shared.ErrorT);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -303,11 +339,25 @@ export class Animals {
                         shared.Animals,
                         resFieldDepth
                     );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             case httpRes?.status == 500:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.error = utils.objectToClass(JSON.parse(decodedRes), shared.ErrorT);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -370,6 +420,13 @@ export class Animals {
             case httpRes?.status == 200:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.getAllLivingThings200ApplicationJSONObject = JSON.parse(decodedRes);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
@@ -448,11 +505,25 @@ export class Animals {
             case httpRes?.status == 200:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.animals = utils.objectToClass(JSON.parse(decodedRes), shared.Animals);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
             case httpRes?.status == 500:
                 if (utils.matchContentType(contentType, `application/json`)) {
                     res.error = utils.objectToClass(JSON.parse(decodedRes), shared.ErrorT);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
                 }
                 break;
         }
