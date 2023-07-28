@@ -21,18 +21,19 @@ Post animals description
 
 ```typescript
 import { Pb } from "petstore";
-import { CreateAnimalResponse } from "petstore/dist/sdk/models/operations";
+import { CreateAnimalResponse, CreateAnimalSecurity } from "petstore/dist/sdk/models/operations";
 
 const sdk = new Pb();
+const operationSecurity: CreateAnimalSecurity = {
+  key1: "",
+};
 
 sdk.animals.createAnimal({
   age: 870013,
   color: "at",
   id: "f7cc78ca-1ba9-428f-8816-742cb7392059",
   name: "Sheryl Fadel",
-}, {
-  key1: "",
-}).then((res: CreateAnimalResponse) => {
+}, operationSecurity).then((res: CreateAnimalResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -245,9 +246,12 @@ Update the animal object
 
 ```typescript
 import { Pb } from "petstore";
-import { UpdateAnimalsByIdResponse } from "petstore/dist/sdk/models/operations";
+import { UpdateAnimalsByIdResponse, UpdateAnimalsByIdSecurity } from "petstore/dist/sdk/models/operations";
 
 const sdk = new Pb();
+const operationSecurity: UpdateAnimalsByIdSecurity = {
+  key1: "",
+};
 
 sdk.animals.updateAnimalsById({
   animals: {
@@ -257,9 +261,7 @@ sdk.animals.updateAnimalsById({
     name: "Mindy Marks",
   },
   id: "7f3a4100-674e-4bf6-9280-d1ba77a89ebf",
-}, {
-  key1: "",
-}).then((res: UpdateAnimalsByIdResponse) => {
+}, operationSecurity).then((res: UpdateAnimalsByIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
