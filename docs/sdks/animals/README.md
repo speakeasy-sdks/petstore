@@ -70,46 +70,27 @@ sdk.animals.createLivingThings({
   data: {
     animal: [
       {
-        age: 902599,
-        color: "fuga",
-        id: "7596eb10-faaa-4235-ac59-55907aff1a3a",
-        name: "Jaime O'Hara",
-      },
-      {
-        age: 414369,
-        color: "quam",
-        id: "739251aa-52c3-4f5a-9019-da1ffe78f097",
-        name: "Thomas Batz",
-      },
-      {
-        age: 979587,
-        color: "dicta",
-        id: "5471b5e6-e13b-499d-888e-1e91e450ad2a",
-        name: "Marty Green",
-      },
-      {
-        age: 397821,
-        color: "cupiditate",
-        id: "802d502a-94bb-44f6-bc96-9e9a3efa77df",
-        name: "Keith Gulgowski",
+        age: 943749,
+        color: "saepe",
+        id: "a7596eb1-0faa-4a23-92c5-955907aff1a3",
+        name: "Carlos Ziemann",
       },
     ],
     birds: {
       food: [
-        "aliquid",
-        "laborum",
+        "numquam",
       ],
-      id: "e395efb9-ba88-4f3a-a699-7074ba4469b6",
-      name: "Brandon Brakus V",
+      id: "67739251-aa52-4c3f-9ad0-19da1ffe78f0",
+      name: "Mr. Jared Ritchie",
     },
-    createdDate: 590873,
-    updatedDate: 5743.25,
+    createdDate: 979587,
+    updatedDate: 359444,
   },
   meta: {
     hasMore: false,
-    pageNumber: 653201,
+    pageNumber: 480894,
   },
-  name: "Shaun Hammes",
+  name: "Maryann Hamill",
 }).then((res: CreateLivingThingsResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -143,7 +124,7 @@ import { DeleteAnimalsByIdResponse } from "petstore/dist/sdk/models/operations";
 const sdk = new Pb();
 
 sdk.animals.deleteAnimalsById({
-  id: "e2516fe4-c8b7-411e-9b7f-d2ed028921cd",
+  id: "e13b99d4-88e1-4e91-a450-ad2abd442698",
 }).then((res: DeleteAnimalsByIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -177,10 +158,10 @@ import { GetAllAnimalsResponse } from "petstore/dist/sdk/models/operations";
 const sdk = new Pb();
 
 sdk.animals.getAllAnimals({
-  age: "pariatur",
-  color: "maxime",
-  id: "692601fb-576b-40d5-b0d3-0c5fbb258705",
-  name: "Ruby Auer",
+  age: "perferendis",
+  color: "magni",
+  id: "d502a94b-b4f6-43c9-a9e9-a3efa77dfb14",
+  name: "Irving Jenkins",
 }).then((res: GetAllAnimalsResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -215,8 +196,7 @@ const sdk = new Pb();
 
 sdk.animals.getAllLivingThings({
   filter: [
-    "dolor",
-    "vero",
+    "accusamus",
   ],
 }).then((res: GetAllLivingThingsResponse) => {
   if (res.statusCode == 200) {
@@ -255,12 +235,12 @@ const operationSecurity: UpdateAnimalsByIdSecurity = {
 
 sdk.animals.updateAnimalsById({
   animals: {
-    age: 345352,
-    color: "hic",
-    id: "e9b90c28-909b-43fe-89a8-d9cbf4863332",
-    name: "Mindy Marks",
+    age: 249796,
+    color: "occaecati",
+    id: "5efb9ba8-8f3a-4669-9707-4ba4469b6e21",
+    name: "Frances Marks",
   },
-  id: "7f3a4100-674e-4bf6-9280-d1ba77a89ebf",
+  id: "890afa56-3e25-416f-a4c8-b711e5b7fd2e",
 }, operationSecurity).then((res: UpdateAnimalsByIdResponse) => {
   if (res.statusCode == 200) {
     // handle response

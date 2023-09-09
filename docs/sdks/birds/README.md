@@ -26,33 +26,27 @@ sdk.birds.createLivingThings({
   data: {
     animal: [
       {
-        age: 216897,
-        color: "voluptate",
-        id: "ae4203ce-5e6a-495d-8a0d-446ce2af7a73",
-        name: "Saul Fay",
-      },
-      {
-        age: 253941,
-        color: "enim",
-        id: "3f870b32-6b5a-4734-a9cd-b1a8422bb679",
-        name: "Shawn Doyle",
+        age: 868126,
+        color: "accusantium",
+        id: "28921cdd-c692-4601-bb57-6b0d5f0d30c5",
+        name: "Pete Rohan",
       },
     ],
     birds: {
       food: [
-        "sunt",
-        "ullam",
+        "totam",
       ],
-      id: "bf0cbb1e-31b8-4b90-b344-3a1108e0adcf",
-      name: "Olivia McGlynn IV",
+      id: "7053202c-73d5-4fe9-b90c-28909b3fe49a",
+      name: "Ervin McLaughlin",
     },
-    createdDate: 580447,
-    updatedDate: 7875.42,
+    createdDate: "quaerat",
+    updatedDate: 3982.21,
   },
   meta: {
-    pageNumber: "omnis",
+    hasMore: false,
+    pageNumber: 209843,
   },
-  name: "Tiffany Willms",
+  name: "Norma Erdman",
 }).then((res: CreateLivingThingsResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -88,35 +82,32 @@ const sdk = new Pb();
 
 sdk.birds.createNewBird({
   age: {
-    amount: 8788.7,
-    unit: NestedBirdAgeUnit.Days,
+    amount: 7395.51,
+    unit: NestedBirdAgeUnit.Years,
   },
   flight: {
     canFly: false,
     wings: {
-      count: 492268,
+      count: 490459,
       span: {
-        amount: 9413.78,
-        unit: "distinctio",
+        amount: 9702.37,
+        unit: "amet",
       },
     },
   },
   food: [
-    "odio",
-    "similique",
-    "facilis",
-    "vero",
+    "dolorum",
   ],
-  id: "74dd39c0-f5d2-4cff-bc70-a45626d43681",
+  id: "4100674e-bf69-4280-91ba-77a89ebf737a",
   location: [
     {
       geography: {
-        latitude: "maiores",
-        longitutde: "quasi",
+        latitude: "saepe",
+        longitutde: "eius",
       },
     },
   ],
-  name: "Freda Marks",
+  name: "Lisa Fay",
 }).then((res: CreateNewBirdResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -151,10 +142,7 @@ const sdk = new Pb();
 
 sdk.birds.getAllLivingThings({
   filter: [
-    "quisquam",
-    "saepe",
-    "ea",
-    "impedit",
+    "ad",
   ],
 }).then((res: GetAllLivingThingsResponse) => {
   if (res.statusCode == 200) {
