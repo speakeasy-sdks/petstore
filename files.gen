@@ -32,7 +32,6 @@ src/sdk/models/shared/error.ts
 src/sdk/models/shared/animals.ts
 src/sdk/models/shared/complexobject.ts
 src/sdk/models/shared/pagination.ts
-src/sdk/models/shared/birds.ts
 src/sdk/models/shared/nestedbird.ts
 src/sdk/models/shared/index.ts
 src/sdk/models/errors/index.ts
@@ -49,13 +48,6 @@ docs/models/operations/deleteanimalsbyidresponse.md
 docs/models/operations/getallanimalsrequest.md
 docs/models/operations/getallanimalsresponse.md
 docs/models/operations/getalllivingthingsrequest.md
-docs/models/operations/getalllivingthings200applicationjson2meta2pagination.md
-docs/models/operations/getalllivingthings200applicationjson2meta2.md
-docs/models/operations/getalllivingthings200applicationjson2meta1.md
-docs/models/operations/getalllivingthings200applicationjson2.md
-docs/models/operations/getalllivingthings200applicationjson1metapagination.md
-docs/models/operations/getalllivingthings200applicationjson1meta.md
-docs/models/operations/getalllivingthings200applicationjson1.md
 docs/models/operations/getalllivingthingsresponse.md
 docs/models/operations/updateanimalsbyidsecurity.md
 docs/models/operations/updateanimalsbyidrequest.md
@@ -70,7 +62,6 @@ docs/models/shared/complexobjectdata.md
 docs/models/shared/complexobjectmeta2.md
 docs/models/shared/complexobject.md
 docs/models/shared/pagination.md
-docs/models/shared/birds.md
 docs/models/shared/nestedbirdageunit.md
 docs/models/shared/nestedbirdage.md
 docs/models/shared/nestedbirdflightwingsspan.md

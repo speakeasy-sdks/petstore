@@ -3,7 +3,6 @@
  */
 
 export * from "./animals";
-export * from "./birds";
 export * from "./complexobject";
 export * from "./error";
 export * from "./nestedbird";
