@@ -41,7 +41,7 @@ export class Animals {
         );
         const url: string = baseURL.replace(/\/$/, "") + "/animals";
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "request", "json");
@@ -134,7 +134,7 @@ export class Animals {
         );
         const url: string = baseURL.replace(/\/$/, "") + "/living-things";
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "request", "json");
@@ -449,7 +449,7 @@ export class Animals {
         );
         const url: string = utils.generateURL(baseURL, "/animals/{id}", req);
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "animals", "json");

@@ -40,7 +40,7 @@ export class Birds {
         );
         const url: string = baseURL.replace(/\/$/, "") + "/living-things";
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "request", "json");
@@ -133,7 +133,7 @@ export class Birds {
         );
         const url: string = baseURL.replace(/\/$/, "") + "/birds";
 
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "request", "json");
