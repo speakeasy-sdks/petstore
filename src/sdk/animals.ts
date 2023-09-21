@@ -7,7 +7,7 @@ import * as errors from "./models/errors";
 import * as operations from "./models/operations";
 import * as shared from "./models/shared";
 import { SDKConfiguration } from "./sdk";
-import { AxiosInstance, AxiosRequestConfig, AxiosResponse } from "axios";
+import { AxiosInstance, AxiosRequestConfig, AxiosResponse, RawAxiosRequestHeaders } from "axios";
 
 /**
  * Work with Animals.
@@ -55,7 +55,11 @@ export class Animals {
             security = new operations.CreateAnimalSecurity(security);
         }
         const properties = utils.parseSecurityProperties(security);
-        const headers = { ...reqBodyHeaders, ...config?.headers, ...properties.headers };
+        const headers: RawAxiosRequestHeaders = {
+            ...reqBodyHeaders,
+            ...config?.headers,
+            ...properties.headers,
+        };
         headers["Accept"] = "application/json";
 
         headers[
@@ -144,7 +148,7 @@ export class Animals {
             }
         }
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        const headers = { ...reqBodyHeaders, ...config?.headers };
+        const headers: RawAxiosRequestHeaders = { ...reqBodyHeaders, ...config?.headers };
         headers["Accept"] = "application/json";
 
         headers[
@@ -227,7 +231,7 @@ export class Animals {
         );
         const url: string = utils.generateURL(baseURL, "/animals/{id}", req);
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        const headers = { ...config?.headers };
+        const headers: RawAxiosRequestHeaders = { ...config?.headers };
         headers["Accept"] = "application/json";
 
         headers[
@@ -295,7 +299,7 @@ export class Animals {
         );
         const url: string = baseURL.replace(/\/$/, "") + "/animals";
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        const headers = { ...config?.headers };
+        const headers: RawAxiosRequestHeaders = { ...config?.headers };
         const queryParams: string = utils.serializeQueryParams(req);
         headers["Accept"] = "application/json";
 
@@ -380,7 +384,7 @@ export class Animals {
         );
         const url: string = baseURL.replace(/\/$/, "") + "/living-things";
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        const headers = { ...config?.headers };
+        const headers: RawAxiosRequestHeaders = { ...config?.headers };
         const queryParams: string = utils.serializeQueryParams(req);
         headers["Accept"] = "application/json";
 
@@ -463,7 +467,11 @@ export class Animals {
             security = new operations.UpdateAnimalsByIdSecurity(security);
         }
         const properties = utils.parseSecurityProperties(security);
-        const headers = { ...reqBodyHeaders, ...config?.headers, ...properties.headers };
+        const headers: RawAxiosRequestHeaders = {
+            ...reqBodyHeaders,
+            ...config?.headers,
+            ...properties.headers,
+        };
         headers["Accept"] = "application/json";
 
         headers[
