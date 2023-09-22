@@ -7,11 +7,6 @@ import * as shared from "../shared";
 import { AxiosResponse } from "axios";
 import { Expose } from "class-transformer";
 
-export class CreateAnimalSecurity extends SpeakeasyBase {
-    @SpeakeasyMetadata({ data: "security, scheme=true;type=oauth2;name=Authorization" })
-    key1: string;
-}
-
 export class CreateAnimalRequestBody extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "age" })

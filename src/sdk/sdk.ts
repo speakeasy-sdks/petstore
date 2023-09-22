@@ -5,6 +5,7 @@
 import * as utils from "../internal/utils";
 import { Animals } from "./animals";
 import { Birds } from "./birds";
+import * as shared from "./models/shared";
 import axios from "axios";
 import { AxiosInstance } from "axios";
 
@@ -27,6 +28,10 @@ export const ServerList = [
  */
 export type SDKProps = {
     /**
+     * The security details required to authenticate the SDK
+     */
+    security?: shared.Security | (() => Promise<shared.Security>);
+    /**
      * Allows overriding the default axios client used by the SDK
      */
     defaultClient?: AxiosInstance;
@@ -48,12 +53,13 @@ export type SDKProps = {
 
 export class SDKConfiguration {
     defaultClient: AxiosInstance;
+    security?: shared.Security | (() => Promise<shared.Security>);
     serverURL: string;
     serverDefaults: any;
     language = "typescript";
     openapiDocVersion = "1.0";
-    sdkVersion = "1.15.4";
-    genVersion = "2.122.1";
+    sdkVersion = "1.16.0";
+    genVersion = "2.125.1";
     retryConfig?: utils.RetryConfig;
     public constructor(init?: Partial<SDKConfiguration>) {
         Object.assign(this, init);
@@ -89,6 +95,7 @@ export class Pb {
         const defaultClient = props?.defaultClient ?? axios.create({ baseURL: serverURL });
         this.sdkConfiguration = new SDKConfiguration({
             defaultClient: defaultClient,
+            security: props?.security,
             serverURL: serverURL,
             retryConfig: props?.retryConfig,
         });

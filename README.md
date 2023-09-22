@@ -18,23 +18,22 @@ yarn add https://github.com/speakeasy-sdks/petstore
 
 ## SDK Example Usage
 <!-- Start SDK Example Usage -->
-
-
 ```typescript
 import { Pb } from "petstore";
-import { CreateAnimalResponse, CreateAnimalSecurity } from "petstore/dist/sdk/models/operations";
+import { CreateAnimalResponse } from "petstore/dist/sdk/models/operations";
 
-const sdk = new Pb();
-const operationSecurity: CreateAnimalSecurity = {
-  key1: "",
-};
+const sdk = new Pb({
+  security: {
+    key1: "",
+  },
+});
 
 sdk.animals.createAnimal({
-  age: 548814,
-  color: "provident",
-  id: "bd9d8d69-a674-4e0f-867c-c8796ed151a0",
-  name: "Estelle Will",
-}, operationSecurity).then((res: CreateAnimalResponse) => {
+  age: 870013,
+  color: "at",
+  id: "f7cc78ca-1ba9-428f-8816-742cb7392059",
+  name: "Sheryl Fadel",
+}).then((res: CreateAnimalResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -61,6 +60,32 @@ sdk.animals.createAnimal({
 * [createNewBird](docs/sdks/birds/README.md#createnewbird) - Create new Bird
 * [getAllLivingThings](docs/sdks/birds/README.md#getalllivingthings) - Get All living things
 <!-- End SDK Available Operations -->
+
+
+
+<!-- Start Dev Containers -->
+
+
+
+<!-- End Dev Containers -->
+
+
+
+<!-- Start Pagination -->
+# Pagination
+
+Some of the endpoints in this SDK support pagination. To use pagination, you make your SDK calls as usual, but the
+returned response object will have a `next` method that can be called to pull down the next group of results. If the
+return value of `next` is `null`, then there are no more pages to be fetched.
+
+Here's an example of one such pagination call:
+
+
+<!-- End Pagination -->
+
+<!-- Placeholder for Future Speakeasy SDK Sections -->
+
+
 
 ### Maturity
 
