@@ -45,7 +45,7 @@ sdk.animals.createAnimal({
 ## Available Resources and Operations
 
 
-### [Animals](docs/sdks/animals/README.md)
+### [animals](docs/sdks/animals/README.md)
 
 * [createAnimal](docs/sdks/animals/README.md#createanimal) - create an animal
 * [createLivingThings](docs/sdks/animals/README.md#createlivingthings) - create a living thing
@@ -54,7 +54,7 @@ sdk.animals.createAnimal({
 * [getAllLivingThings](docs/sdks/animals/README.md#getalllivingthings) - Get All living things
 * [updateAnimalsById](docs/sdks/animals/README.md#updateanimalsbyid) - Update Animal
 
-### [Birds](docs/sdks/birds/README.md)
+### [birds](docs/sdks/birds/README.md)
 
 * [createLivingThings](docs/sdks/birds/README.md#createlivingthings) - create a living thing
 * [createNewBird](docs/sdks/birds/README.md#createnewbird) - Create new Bird
