@@ -31,10 +31,10 @@ const sdk = new Pb({
 });
 
 sdk.animals.createAnimal({
-  age: 943749,
-  color: "saepe",
-  id: "a7596eb1-0faa-4a23-92c5-955907aff1a3",
-  name: "Carlos Ziemann",
+  age: 239780,
+  color: "maroon",
+  id: "<ID>",
+  name: "Buckinghamshire TLS",
 }).then((res: CreateAnimalResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -75,27 +75,26 @@ sdk.animals.createLivingThings({
   data: {
     animal: [
       {
-        age: 253291,
-        color: "commodi",
-        id: "7739251a-a52c-43f5-ad01-9da1ffe78f09",
-        name: "Ms. Karla Aufderhar",
+        age: 24488,
+        color: "sky blue",
+        id: "<ID>",
+        name: "loyalty Officer withdrawal",
       },
     ],
     birds: {
       food: [
-        "maiores",
+        "ruddy",
       ],
-      id: "15471b5e-6e13-4b99-9488-e1e91e450ad2",
-      name: "Rudy Spencer",
+      id: "<ID>",
+      name: "Fantastic",
     },
-    createdDate: 397821,
-    updatedDate: 5528.22,
+    createdDate: 282771,
+    updatedDate: 2077.97,
   },
   meta: {
-    hasMore: false,
-    pageNumber: 164940,
+    pageNumber: "Reggae Cargo",
   },
-  name: "Vernon Abshire",
+  name: "Home",
 }).then((res: CreateLivingThingsResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -133,7 +132,7 @@ const sdk = new Pb({
 });
 
 sdk.animals.deleteAnimalsById({
-  id: "94bb4f63-c969-4e9a-befa-77dfb14cd66a",
+  id: "<ID>",
 }).then((res: DeleteAnimalsByIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -171,10 +170,10 @@ const sdk = new Pb({
 });
 
 sdk.animals.getAllAnimals({
-  age: "accusamus",
-  color: "non",
-  id: "95efb9ba-88f3-4a66-9970-74ba4469b6e2",
-  name: "Danielle Bosco",
+  age: "Avon",
+  color: "turquoise",
+  id: "<ID>",
+  name: "plum",
 }).then((res: GetAllAnimalsResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -213,7 +212,7 @@ const sdk = new Pb({
 
 sdk.animals.getAllLivingThings({
   filter: [
-    "provident",
+    "qua",
   ],
 }).then((res: GetAllLivingThingsResponse) => {
   if (res.statusCode == 200) {
@@ -253,12 +252,12 @@ const sdk = new Pb({
 
 sdk.animals.updateAnimalsById({
   animals: {
-    age: 551816,
-    color: "sint",
-    id: "0afa563e-2516-4fe4-88b7-11e5b7fd2ed0",
-    name: "Irma Morissette DDS",
+    age: 15412,
+    color: "ivory",
+    id: "<ID>",
+    name: "index Elizabeth Fish",
   },
-  id: "ddc69260-1fb5-476b-8d5f-0d30c5fbb258",
+  id: "<ID>",
 }).then((res: UpdateAnimalsByIdResponse) => {
   if (res.statusCode == 200) {
     // handle response

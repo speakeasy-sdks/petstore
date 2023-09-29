@@ -29,10 +29,10 @@ const sdk = new Pb({
 });
 
 sdk.animals.createAnimal({
-  age: 870013,
-  color: "at",
-  id: "f7cc78ca-1ba9-428f-8816-742cb7392059",
-  name: "Sheryl Fadel",
+  age: 239780,
+  color: "maroon",
+  id: "<ID>",
+  name: "Buckinghamshire TLS",
 }).then((res: CreateAnimalResponse) => {
   if (res.statusCode == 200) {
     // handle response

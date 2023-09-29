@@ -31,26 +31,26 @@ sdk.birds.createLivingThings({
   data: {
     animal: [
       {
-        age: 489549,
-        color: "eaque",
-        id: "53202c73-d5fe-49b9-8c28-909b3fe49a8d",
-        name: "Loren Renner",
+        age: 24488,
+        color: "sky blue",
+        id: "<ID>",
+        name: "loyalty Officer withdrawal",
       },
     ],
     birds: {
       food: [
-        "quos",
+        "ruddy",
       ],
-      id: "633323f9-b77f-43a4-9006-74ebf69280d1",
-      name: "Omar Kris",
+      id: "<ID>",
+      name: "Fantastic",
     },
-    createdDate: "omnis",
-    updatedDate: 7146.97,
+    createdDate: 282771,
+    updatedDate: 2077.97,
   },
   meta: {
-    pageNumber: "nihil",
+    pageNumber: "Reggae Cargo",
   },
-  name: "Tamara Ondricka",
+  name: "Home",
 }).then((res: CreateLivingThingsResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -90,32 +90,32 @@ const sdk = new Pb({
 
 sdk.birds.createNewBird({
   age: {
-    amount: 1372.2,
-    unit: NestedBirdAgeUnit.Months,
+    amount: 5601.46,
+    unit: NestedBirdAgeUnit.Years,
   },
   flight: {
     canFly: false,
     wings: {
-      count: 229219,
+      count: 959530,
       span: {
-        amount: 7583.79,
-        unit: "accusamus",
+        amount: 7898.44,
+        unit: "katal",
       },
     },
   },
   food: [
-    "ad",
+    "digital",
   ],
-  id: "e6a95d8a-0d44-46ce-aaf7-a73cf3be453f",
+  id: "<ID>",
   location: [
     {
       geography: {
-        latitude: "totam",
-        longitutde: "nihil",
+        latitude: "-69.7312",
+        longitutde: "Response",
       },
     },
   ],
-  name: "Mamie Durgan",
+  name: "wipe Southwest",
 }).then((res: CreateNewBirdResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -154,7 +154,7 @@ const sdk = new Pb({
 
 sdk.birds.getAllLivingThings({
   filter: [
-    "libero",
+    "qua",
   ],
 }).then((res: GetAllLivingThingsResponse) => {
   if (res.statusCode == 200) {
