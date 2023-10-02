@@ -6,19 +6,7 @@ import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { Animals } from "./animals";
 import { Expose, Type } from "class-transformer";
 
-export class ComplexObjectDataBirds extends SpeakeasyBase {
-    @SpeakeasyMetadata()
-    @Expose({ name: "food" })
-    food: string[];
-
-    @SpeakeasyMetadata()
-    @Expose({ name: "id" })
-    id: string;
-
-    @SpeakeasyMetadata()
-    @Expose({ name: "name" })
-    name: string;
-}
+export class ComplexObjectDataBirds2 extends SpeakeasyBase {}
 
 export class ComplexObjectData extends SpeakeasyBase {
     @SpeakeasyMetadata({ elemType: Animals })
@@ -28,8 +16,7 @@ export class ComplexObjectData extends SpeakeasyBase {
 
     @SpeakeasyMetadata()
     @Expose({ name: "birds" })
-    @Type(() => ComplexObjectDataBirds)
-    birds?: ComplexObjectDataBirds;
+    birds?: any;
 
     @SpeakeasyMetadata()
     @Expose({ name: "createdDate" })

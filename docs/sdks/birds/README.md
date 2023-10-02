@@ -37,20 +37,14 @@ sdk.birds.createLivingThings({
         name: "loyalty Officer withdrawal",
       },
     ],
-    birds: {
-      food: [
-        "ruddy",
-      ],
-      id: "<ID>",
-      name: "Fantastic",
-    },
-    createdDate: 282771,
-    updatedDate: 2077.97,
+    birds: {},
+    createdDate: "Fantastic",
+    updatedDate: 282771,
   },
   meta: {
-    pageNumber: "Reggae Cargo",
+    pageNumber: "Orchestrator",
   },
-  name: "Home",
+  name: "North Fish",
 }).then((res: CreateLivingThingsResponse) => {
   if (res.statusCode == 200) {
     // handle response

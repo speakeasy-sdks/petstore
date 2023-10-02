@@ -446,7 +446,7 @@ export class Animals {
         switch (true) {
             case httpRes?.status == 200:
                 if (utils.matchContentType(contentType, `application/json`)) {
-                    res.getAllLivingThings200ApplicationJSONObject = JSON.parse(decodedRes);
+                    res.getAllLivingThings200ApplicationJSONOneOf = JSON.parse(decodedRes);
                 } else {
                     throw new errors.SDKError(
                         "unknown content-type received: " + contentType,
