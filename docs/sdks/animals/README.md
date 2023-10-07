@@ -22,24 +22,24 @@ Post animals description
 
 ```typescript
 import { Pb } from "petstore";
-import { CreateAnimalResponse } from "petstore/dist/sdk/models/operations";
 
-const sdk = new Pb({
-  security: {
-    key1: "",
-  },
-});
+(async() => {
+  const sdk = new Pb({
+    security: {
+      key1: "",
+    },
+  });
 
-sdk.animals.createAnimal({
-  age: 239780,
-  color: "maroon",
-  id: "<ID>",
-  name: "Buckinghamshire TLS",
-}).then((res: CreateAnimalResponse) => {
+  const res = await sdk.animals.createAnimal({
+    color: "white",
+    id: "<ID>",
+    name: "illo Jeep",
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -63,37 +63,30 @@ Create a living thing
 
 ```typescript
 import { Pb } from "petstore";
-import { CreateLivingThingsResponse } from "petstore/dist/sdk/models/operations";
 
-const sdk = new Pb({
-  security: {
-    key1: "",
-  },
-});
+(async() => {
+  const sdk = new Pb({
+    security: {
+      key1: "",
+    },
+  });
 
-sdk.animals.createLivingThings({
-  data: {
-    animal: [
-      {
-        age: 24488,
-        color: "sky blue",
-        id: "<ID>",
-        name: "loyalty Officer withdrawal",
-      },
-    ],
-    birds: {},
-    createdDate: "Fantastic",
-    updatedDate: 282771,
-  },
-  meta: {
-    pageNumber: "Orchestrator",
-  },
-  name: "North Fish",
-}).then((res: CreateLivingThingsResponse) => {
+  const res = await sdk.animals.createLivingThings({
+    data: {
+      animal: [
+        {},
+      ],
+      birds: "Mesquite",
+      createdDate: "joule",
+      updatedDate: "Granite",
+    },
+    meta: "Officer",
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -117,21 +110,22 @@ Delete the animal
 
 ```typescript
 import { Pb } from "petstore";
-import { DeleteAnimalsByIdResponse } from "petstore/dist/sdk/models/operations";
 
-const sdk = new Pb({
-  security: {
-    key1: "",
-  },
-});
+(async() => {
+  const sdk = new Pb({
+    security: {
+      key1: "",
+    },
+  });
 
-sdk.animals.deleteAnimalsById({
-  id: "<ID>",
-}).then((res: DeleteAnimalsByIdResponse) => {
+  const res = await sdk.animals.deleteAnimalsById({
+    id: "<ID>",
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -155,24 +149,20 @@ Get Animals Description
 
 ```typescript
 import { Pb } from "petstore";
-import { GetAllAnimalsResponse } from "petstore/dist/sdk/models/operations";
 
-const sdk = new Pb({
-  security: {
-    key1: "",
-  },
-});
+(async() => {
+  const sdk = new Pb({
+    security: {
+      key1: "",
+    },
+  });
 
-sdk.animals.getAllAnimals({
-  age: "Avon",
-  color: "turquoise",
-  id: "<ID>",
-  name: "plum",
-}).then((res: GetAllAnimalsResponse) => {
+  const res = await sdk.animals.getAllAnimals({});
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -196,23 +186,24 @@ get All living things data
 
 ```typescript
 import { Pb } from "petstore";
-import { GetAllLivingThingsResponse } from "petstore/dist/sdk/models/operations";
 
-const sdk = new Pb({
-  security: {
-    key1: "",
-  },
-});
+(async() => {
+  const sdk = new Pb({
+    security: {
+      key1: "",
+    },
+  });
 
-sdk.animals.getAllLivingThings({
-  filter: [
-    "qua",
-  ],
-}).then((res: GetAllLivingThingsResponse) => {
+  const res = await sdk.animals.getAllLivingThings({
+    filter: [
+      "qua",
+    ],
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -236,27 +227,23 @@ Update the animal object
 
 ```typescript
 import { Pb } from "petstore";
-import { UpdateAnimalsByIdResponse } from "petstore/dist/sdk/models/operations";
 
-const sdk = new Pb({
-  security: {
-    key1: "",
-  },
-});
+(async() => {
+  const sdk = new Pb({
+    security: {
+      key1: "",
+    },
+  });
 
-sdk.animals.updateAnimalsById({
-  animals: {
-    age: 15412,
-    color: "ivory",
+  const res = await sdk.animals.updateAnimalsById({
+    animals: {},
     id: "<ID>",
-    name: "index Elizabeth Fish",
-  },
-  id: "<ID>",
-}).then((res: UpdateAnimalsByIdResponse) => {
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters

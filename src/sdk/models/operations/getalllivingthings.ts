@@ -3,9 +3,7 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import * as shared from "../shared";
 import { AxiosResponse } from "axios";
-import { Expose, Type } from "class-transformer";
 
 export class GetAllLivingThingsRequest extends SpeakeasyBase {
     /**
@@ -13,62 +11,6 @@ export class GetAllLivingThingsRequest extends SpeakeasyBase {
      */
     @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=filter" })
     filter?: any[];
-}
-
-export class GetAllLivingThings200ApplicationJson2Meta2Pagination extends SpeakeasyBase {
-    @SpeakeasyMetadata()
-    @Expose({ name: "pageNumber" })
-    pageNumber?: number;
-}
-
-export class GetAllLivingThings200ApplicationJson2Meta2 extends SpeakeasyBase {
-    @SpeakeasyMetadata()
-    @Expose({ name: "pagination" })
-    @Type(() => GetAllLivingThings200ApplicationJson2Meta2Pagination)
-    pagination?: GetAllLivingThings200ApplicationJson2Meta2Pagination;
-}
-
-export class GetAllLivingThings200ApplicationJson2Meta1 extends SpeakeasyBase {
-    @SpeakeasyMetadata()
-    @Expose({ name: "pagination" })
-    @Type(() => shared.Pagination)
-    pagination?: shared.Pagination;
-}
-
-export class GetAllLivingThings200ApplicationJson2 extends SpeakeasyBase {
-    @SpeakeasyMetadata({ elemType: shared.Animals })
-    @Expose({ name: "animals" })
-    @Type(() => shared.Animals)
-    animals?: shared.Animals[];
-
-    @SpeakeasyMetadata()
-    @Expose({ name: "meta" })
-    meta?: any;
-}
-
-export class GetAllLivingThings200ApplicationJson1MetaPagination extends SpeakeasyBase {
-    @SpeakeasyMetadata()
-    @Expose({ name: "pageNumber" })
-    pageNumber?: number;
-}
-
-export class GetAllLivingThings200ApplicationJson1Meta extends SpeakeasyBase {
-    @SpeakeasyMetadata()
-    @Expose({ name: "pagination" })
-    @Type(() => GetAllLivingThings200ApplicationJson1MetaPagination)
-    pagination?: GetAllLivingThings200ApplicationJson1MetaPagination;
-}
-
-export class GetAllLivingThings200ApplicationJson1 extends SpeakeasyBase {
-    @SpeakeasyMetadata({ elemType: shared.Birds })
-    @Expose({ name: "birds" })
-    @Type(() => shared.Birds)
-    birds?: shared.Birds[];
-
-    @SpeakeasyMetadata()
-    @Expose({ name: "meta" })
-    @Type(() => GetAllLivingThings200ApplicationJson1Meta)
-    meta?: GetAllLivingThings200ApplicationJson1Meta;
 }
 
 export class GetAllLivingThingsResponse extends SpeakeasyBase {

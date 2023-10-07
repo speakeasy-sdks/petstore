@@ -20,24 +20,24 @@ yarn add https://github.com/speakeasy-sdks/petstore
 <!-- Start SDK Example Usage -->
 ```typescript
 import { Pb } from "petstore";
-import { CreateAnimalResponse } from "petstore/dist/sdk/models/operations";
 
-const sdk = new Pb({
-  security: {
-    key1: "",
-  },
-});
+(async() => {
+  const sdk = new Pb({
+    security: {
+      key1: "",
+    },
+  });
 
-sdk.animals.createAnimal({
-  age: 239780,
-  color: "maroon",
-  id: "<ID>",
-  name: "Buckinghamshire TLS",
-}).then((res: CreateAnimalResponse) => {
+  const res = await sdk.animals.createAnimal({
+    color: "white",
+    id: "<ID>",
+    name: "illo Jeep",
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 <!-- End SDK Example Usage -->
 

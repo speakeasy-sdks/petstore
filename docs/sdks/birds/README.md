@@ -19,37 +19,30 @@ Create a living thing
 
 ```typescript
 import { Pb } from "petstore";
-import { CreateLivingThingsResponse } from "petstore/dist/sdk/models/operations";
 
-const sdk = new Pb({
-  security: {
-    key1: "",
-  },
-});
+(async() => {
+  const sdk = new Pb({
+    security: {
+      key1: "",
+    },
+  });
 
-sdk.birds.createLivingThings({
-  data: {
-    animal: [
-      {
-        age: 24488,
-        color: "sky blue",
-        id: "<ID>",
-        name: "loyalty Officer withdrawal",
-      },
-    ],
-    birds: {},
-    createdDate: "Fantastic",
-    updatedDate: 282771,
-  },
-  meta: {
-    pageNumber: "Orchestrator",
-  },
-  name: "North Fish",
-}).then((res: CreateLivingThingsResponse) => {
+  const res = await sdk.birds.createLivingThings({
+    data: {
+      animal: [
+        {},
+      ],
+      birds: "Mesquite",
+      createdDate: "joule",
+      updatedDate: "Granite",
+    },
+    meta: "Officer",
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -73,48 +66,38 @@ Create a new Bird
 
 ```typescript
 import { Pb } from "petstore";
-import { CreateNewBirdResponse } from "petstore/dist/sdk/models/operations";
 import { NestedBirdAgeUnit } from "petstore/dist/sdk/models/shared";
 
-const sdk = new Pb({
-  security: {
-    key1: "",
-  },
-});
+(async() => {
+  const sdk = new Pb({
+    security: {
+      key1: "",
+    },
+  });
 
-sdk.birds.createNewBird({
-  age: {
-    amount: 5601.46,
-    unit: NestedBirdAgeUnit.Years,
-  },
-  flight: {
-    canFly: false,
-    wings: {
-      count: 959530,
-      span: {
-        amount: 7898.44,
-        unit: "katal",
+  const res = await sdk.birds.createNewBird({
+    age: {
+      unit: NestedBirdAgeUnit.Years,
+    },
+    flight: {
+      wings: {
+        span: {},
       },
     },
-  },
-  food: [
-    "digital",
-  ],
-  id: "<ID>",
-  location: [
-    {
-      geography: {
-        latitude: "-69.7312",
-        longitutde: "Response",
+    food: [
+      "silver",
+    ],
+    location: [
+      {
+        geography: {},
       },
-    },
-  ],
-  name: "wipe Southwest",
-}).then((res: CreateNewBirdResponse) => {
+    ],
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -138,23 +121,24 @@ get All living things data
 
 ```typescript
 import { Pb } from "petstore";
-import { GetAllLivingThingsResponse } from "petstore/dist/sdk/models/operations";
 
-const sdk = new Pb({
-  security: {
-    key1: "",
-  },
-});
+(async() => {
+  const sdk = new Pb({
+    security: {
+      key1: "",
+    },
+  });
 
-sdk.birds.getAllLivingThings({
-  filter: [
-    "qua",
-  ],
-}).then((res: GetAllLivingThingsResponse) => {
+  const res = await sdk.birds.getAllLivingThings({
+    filter: [
+      "qua",
+    ],
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
