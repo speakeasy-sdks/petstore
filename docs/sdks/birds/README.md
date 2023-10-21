@@ -32,11 +32,11 @@ import { Pb } from "petstore";
       animal: [
         {},
       ],
-      birds: "Mesquite",
-      createdDate: "joule",
-      updatedDate: "Granite",
+      birds: "string",
+      createdDate: "string",
+      updatedDate: "string",
     },
-    meta: "Officer",
+    meta: "string",
   });
 
   if (res.statusCode == 200) {
@@ -85,7 +85,7 @@ import { NestedBirdAgeUnit } from "petstore/dist/sdk/models/shared";
       },
     },
     food: [
-      "silver",
+      "string",
     ],
     location: [
       {
@@ -131,7 +131,7 @@ import { Pb } from "petstore";
 
   const res = await sdk.birds.getAllLivingThings({
     filter: [
-      "qua",
+      "string",
     ],
   });
 
