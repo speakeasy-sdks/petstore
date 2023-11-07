@@ -3,8 +3,8 @@
 
 ## Fields
 
-| Field                                                         | Type                                                          | Required                                                      | Description                                                   |
-| ------------------------------------------------------------- | ------------------------------------------------------------- | ------------------------------------------------------------- | ------------------------------------------------------------- |
-| `data`                                                        | [ComplexObjectData](../../models/shared/complexobjectdata.md) | :heavy_minus_sign:                                            | N/A                                                           |
-| `meta`                                                        | *any*                                                         | :heavy_minus_sign:                                            | N/A                                                           |
-| `name`                                                        | *string*                                                      | :heavy_minus_sign:                                            | N/A                                                           |
+| Field                                      | Type                                       | Required                                   | Description                                |
+| ------------------------------------------ | ------------------------------------------ | ------------------------------------------ | ------------------------------------------ |
+| `data`                                     | [shared.Data](../../models/shared/data.md) | :heavy_minus_sign:                         | N/A                                        |
+| `meta`                                     | *any*                                      | :heavy_minus_sign:                         | N/A                                        |
+| `name`                                     | *string*                                   | :heavy_minus_sign:                         | N/A                                        |

@@ -3,7 +3,7 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import * as shared from "../shared";
+import * as shared from "../../../sdk/models/shared";
 import { AxiosResponse } from "axios";
 
 export class GetAllAnimalsRequest extends SpeakeasyBase {
@@ -21,12 +21,6 @@ export class GetAllAnimalsRequest extends SpeakeasyBase {
 }
 
 export class GetAllAnimalsResponse extends SpeakeasyBase {
-    /**
-     * OK
-     */
-    @SpeakeasyMetadata({ elemType: shared.Animals })
-    animals?: shared.Animals[];
-
     /**
      * HTTP response content type for this operation
      */
@@ -50,4 +44,10 @@ export class GetAllAnimalsResponse extends SpeakeasyBase {
      */
     @SpeakeasyMetadata()
     rawResponse?: AxiosResponse;
+
+    /**
+     * OK
+     */
+    @SpeakeasyMetadata({ elemType: shared.Animals })
+    classes?: shared.Animals[];
 }

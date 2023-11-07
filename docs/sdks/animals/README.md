@@ -1,5 +1,5 @@
 # Animals
-(*animals*)
+(*.animals*)
 
 ## Overview
 
@@ -35,6 +35,7 @@ import { Pb } from "petstore";
     id: "<ID>",
     name: "string",
   });
+
 
   if (res.statusCode == 200) {
     // handle response
@@ -83,6 +84,7 @@ import { Pb } from "petstore";
     meta: "string",
   });
 
+
   if (res.statusCode == 200) {
     // handle response
   }
@@ -122,6 +124,7 @@ import { Pb } from "petstore";
     id: "<ID>",
   });
 
+
   if (res.statusCode == 200) {
     // handle response
   }
@@ -158,6 +161,7 @@ import { Pb } from "petstore";
   });
 
   const res = await sdk.animals.getAllAnimals({});
+
 
   if (res.statusCode == 200) {
     // handle response
@@ -200,6 +204,7 @@ import { Pb } from "petstore";
     ],
   });
 
+
   if (res.statusCode == 200) {
     // handle response
   }
@@ -239,6 +244,7 @@ import { Pb } from "petstore";
     animals: {},
     id: "<ID>",
   });
+
 
   if (res.statusCode == 200) {
     // handle response

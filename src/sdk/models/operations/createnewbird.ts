@@ -3,11 +3,11 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import * as shared from "../shared";
+import * as shared from "../../../sdk/models/shared";
 import { AxiosResponse } from "axios";
 import { Expose, Type } from "class-transformer";
 
-export class CreateNewBird200ApplicationJSONMeta extends SpeakeasyBase {
+export class Meta extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "pagination" })
     @Type(() => shared.Pagination)
@@ -21,7 +21,7 @@ export class CreateNewBird200ApplicationJSONMeta extends SpeakeasyBase {
 /**
  * OK
  */
-export class CreateNewBird200ApplicationJSON extends SpeakeasyBase {
+export class CreateNewBirdResponseBody extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "data" })
     @Type(() => shared.NestedBird)
@@ -29,8 +29,8 @@ export class CreateNewBird200ApplicationJSON extends SpeakeasyBase {
 
     @SpeakeasyMetadata()
     @Expose({ name: "meta" })
-    @Type(() => CreateNewBird200ApplicationJSONMeta)
-    meta?: CreateNewBird200ApplicationJSONMeta;
+    @Type(() => Meta)
+    meta?: Meta;
 }
 
 export class CreateNewBirdResponse extends SpeakeasyBase {
@@ -56,5 +56,5 @@ export class CreateNewBirdResponse extends SpeakeasyBase {
      * OK
      */
     @SpeakeasyMetadata()
-    createNewBird200ApplicationJSONObject?: CreateNewBird200ApplicationJSON;
+    object?: CreateNewBirdResponseBody;
 }

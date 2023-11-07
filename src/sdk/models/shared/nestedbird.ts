@@ -5,23 +5,23 @@
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { Expose, Type } from "class-transformer";
 
-export enum NestedBirdAgeUnit {
+export enum Unit {
     Months = "months",
     Years = "years",
     Days = "days",
 }
 
-export class NestedBirdAge extends SpeakeasyBase {
+export class Age extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "amount" })
     amount?: number;
 
     @SpeakeasyMetadata()
     @Expose({ name: "unit" })
-    unit: NestedBirdAgeUnit;
+    unit: Unit;
 }
 
-export class NestedBirdFlightWingsSpan extends SpeakeasyBase {
+export class Span extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "amount" })
     amount?: number;
@@ -31,29 +31,29 @@ export class NestedBirdFlightWingsSpan extends SpeakeasyBase {
     unit?: string;
 }
 
-export class NestedBirdFlightWings extends SpeakeasyBase {
+export class Wings extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "count" })
     count?: number;
 
     @SpeakeasyMetadata()
     @Expose({ name: "span" })
-    @Type(() => NestedBirdFlightWingsSpan)
-    span?: NestedBirdFlightWingsSpan;
+    @Type(() => Span)
+    span?: Span;
 }
 
-export class NestedBirdFlight extends SpeakeasyBase {
+export class Flight extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "canFly" })
     canFly?: boolean;
 
     @SpeakeasyMetadata()
     @Expose({ name: "wings" })
-    @Type(() => NestedBirdFlightWings)
-    wings?: NestedBirdFlightWings;
+    @Type(() => Wings)
+    wings?: Wings;
 }
 
-export class NestedBirdLocationGeography extends SpeakeasyBase {
+export class Geography extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "latitude" })
     latitude?: string;
@@ -63,23 +63,23 @@ export class NestedBirdLocationGeography extends SpeakeasyBase {
     longitutde?: string;
 }
 
-export class NestedBirdLocation extends SpeakeasyBase {
+export class Location extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "geography" })
-    @Type(() => NestedBirdLocationGeography)
-    geography?: NestedBirdLocationGeography;
+    @Type(() => Geography)
+    geography?: Geography;
 }
 
 export class NestedBird extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "age" })
-    @Type(() => NestedBirdAge)
-    age?: NestedBirdAge;
+    @Type(() => Age)
+    age?: Age;
 
     @SpeakeasyMetadata()
     @Expose({ name: "flight" })
-    @Type(() => NestedBirdFlight)
-    flight?: NestedBirdFlight;
+    @Type(() => Flight)
+    flight?: Flight;
 
     @SpeakeasyMetadata()
     @Expose({ name: "food" })
@@ -89,10 +89,10 @@ export class NestedBird extends SpeakeasyBase {
     @Expose({ name: "id" })
     id?: string;
 
-    @SpeakeasyMetadata({ elemType: NestedBirdLocation })
+    @SpeakeasyMetadata({ elemType: Location })
     @Expose({ name: "location" })
-    @Type(() => NestedBirdLocation)
-    location?: NestedBirdLocation[];
+    @Type(() => Location)
+    location?: Location[];
 
     @SpeakeasyMetadata()
     @Expose({ name: "name" })

@@ -36,5 +36,5 @@ export class GetAllLivingThingsResponse extends SpeakeasyBase {
      * OK
      */
     @SpeakeasyMetadata()
-    getAllLivingThings200ApplicationJSONOneOf?: any;
+    oneOf?: any;
 }

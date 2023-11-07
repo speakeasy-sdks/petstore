@@ -1,5 +1,5 @@
 # Birds
-(*birds*)
+(*.birds*)
 
 ## Overview
 
@@ -39,6 +39,7 @@ import { Pb } from "petstore";
     meta: "string",
   });
 
+
   if (res.statusCode == 200) {
     // handle response
   }
@@ -66,7 +67,7 @@ Create a new Bird
 
 ```typescript
 import { Pb } from "petstore";
-import { NestedBirdAgeUnit } from "petstore/dist/sdk/models/shared";
+import { Unit } from "petstore/dist/sdk/models/shared";
 
 (async() => {
   const sdk = new Pb({
@@ -77,7 +78,7 @@ import { NestedBirdAgeUnit } from "petstore/dist/sdk/models/shared";
 
   const res = await sdk.birds.createNewBird({
     age: {
-      unit: NestedBirdAgeUnit.Years,
+      unit: Unit.Years,
     },
     flight: {
       wings: {
@@ -93,6 +94,7 @@ import { NestedBirdAgeUnit } from "petstore/dist/sdk/models/shared";
       },
     ],
   });
+
 
   if (res.statusCode == 200) {
     // handle response
@@ -134,6 +136,7 @@ import { Pb } from "petstore";
       "string",
     ],
   });
+
 
   if (res.statusCode == 200) {
     // handle response

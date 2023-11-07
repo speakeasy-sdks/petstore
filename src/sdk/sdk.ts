@@ -3,9 +3,9 @@
  */
 
 import * as utils from "../internal/utils";
+import * as shared from "../sdk/models/shared";
 import { Animals } from "./animals";
 import { Birds } from "./birds";
-import * as shared from "./models/shared";
 import axios from "axios";
 import { AxiosInstance } from "axios";
 
@@ -59,9 +59,9 @@ export class SDKConfiguration {
     serverDefaults: any;
     language = "typescript";
     openapiDocVersion = "1.0";
-    sdkVersion = "1.22.0";
-    genVersion = "2.171.0";
-    userAgent = "speakeasy-sdk/typescript 1.22.0 2.171.0 1.0 petstore";
+    sdkVersion = "2.0.0";
+    genVersion = "2.181.1";
+    userAgent = "speakeasy-sdk/typescript 2.0.0 2.181.1 1.0 petstore";
     retryConfig?: utils.RetryConfig;
     public constructor(init?: Partial<SDKConfiguration>) {
         Object.assign(this, init);
