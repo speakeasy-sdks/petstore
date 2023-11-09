@@ -46,7 +46,7 @@ import { Pb } from "petstore";
 ## Available Resources and Operations
 
 
-### [.animals](docs/sdks/animals/README.md)
+### [animals](docs/sdks/animals/README.md)
 
 * [createAnimal](docs/sdks/animals/README.md#createanimal) - create an animal
 * [createLivingThings](docs/sdks/animals/README.md#createlivingthings) - create a living thing
@@ -55,7 +55,7 @@ import { Pb } from "petstore";
 * [getAllLivingThings](docs/sdks/animals/README.md#getalllivingthings) - Get All living things
 * [updateAnimalsById](docs/sdks/animals/README.md#updateanimalsbyid) - Update Animal
 
-### [.birds](docs/sdks/birds/README.md)
+### [birds](docs/sdks/birds/README.md)
 
 * [createLivingThings](docs/sdks/birds/README.md#createlivingthings) - create a living thing
 * [createNewBird](docs/sdks/birds/README.md#createnewbird) - Create new Bird
@@ -85,9 +85,40 @@ Here's an example of one such pagination call:
 <!-- Start Error Handling -->
 # Error Handling
 
-Handling errors in your SDK should largely match your expectations.  All operations return a response object or throw an error.  If Error objects are specified in your OpenAPI Spec, the SDK will throw the appropriate Error type.
+Handling errors in this SDK should largely match your expectations.  All operations return a response object or throw an error.  If Error objects are specified in your OpenAPI Spec, the SDK will throw the appropriate Error type.
+
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 
+## Example
+
+```typescript
+import { Pb } from "petstore";
+
+(async () => {
+    const sdk = new Pb({
+        security: {
+            key1: "",
+        },
+    });
+
+    let res;
+    try {
+        res = await sdk.animals.createAnimal({
+            color: "white",
+            id: "<ID>",
+            name: "string",
+        });
+    } catch (e) {}
+
+    if (res.statusCode == 200) {
+        // handle response
+    }
+})();
+
+```
 <!-- End Error Handling -->
 
 
@@ -181,19 +212,16 @@ const httpClient = axios.create({
 
 const sdk = new Pb({defaultClient: httpClient});
 ```
-
-
 <!-- End Custom HTTP Client -->
 
 
 
 <!-- Start Authentication -->
-
 # Authentication
 
 ## Per-Client Security Schemes
 
-Your SDK supports the following security scheme globally:
+This SDK supports the following security scheme globally:
 
 | Name         | Type         | Scheme       |
 | ------------ | ------------ | ------------ |
