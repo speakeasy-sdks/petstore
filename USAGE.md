@@ -1,11 +1,11 @@
-<!-- Start SDK Example Usage -->
+<!-- Start SDK Example Usage [usage] -->
 ```typescript
 import { Pb } from "petstore";
 
-(async () => {
+async function run() {
     const sdk = new Pb({
         security: {
-            key1: "",
+            key1: "Bearer <YOUR_ACCESS_TOKEN_HERE>",
         },
     });
 
@@ -18,7 +18,9 @@ import { Pb } from "petstore";
     if (res.statusCode == 200) {
         // handle response
     }
-})();
+}
+
+run();
 
 ```
-<!-- End SDK Example Usage -->
+<!-- End SDK Example Usage [usage] -->

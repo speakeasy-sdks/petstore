@@ -20,10 +20,10 @@ Create a living thing
 ```typescript
 import { Pb } from "petstore";
 
-(async() => {
+async function run() {
   const sdk = new Pb({
     security: {
-      key1: "",
+      key1: "Bearer <YOUR_ACCESS_TOKEN_HERE>",
     },
   });
 
@@ -42,7 +42,9 @@ import { Pb } from "petstore";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -72,10 +74,10 @@ Create a new Bird
 import { Pb } from "petstore";
 import { Unit } from "petstore/dist/sdk/models/shared";
 
-(async() => {
+async function run() {
   const sdk = new Pb({
     security: {
-      key1: "",
+      key1: "Bearer <YOUR_ACCESS_TOKEN_HERE>",
     },
   });
 
@@ -101,7 +103,9 @@ import { Unit } from "petstore/dist/sdk/models/shared";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -130,10 +134,10 @@ get All living things data
 ```typescript
 import { Pb } from "petstore";
 
-(async() => {
+async function run() {
   const sdk = new Pb({
     security: {
-      key1: "",
+      key1: "Bearer <YOUR_ACCESS_TOKEN_HERE>",
     },
   });
 
@@ -146,7 +150,9 @@ import { Pb } from "petstore";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters

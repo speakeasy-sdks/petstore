@@ -23,10 +23,10 @@ Post animals description
 ```typescript
 import { Pb } from "petstore";
 
-(async() => {
+async function run() {
   const sdk = new Pb({
     security: {
-      key1: "",
+      key1: "Bearer <YOUR_ACCESS_TOKEN_HERE>",
     },
   });
 
@@ -39,7 +39,9 @@ import { Pb } from "petstore";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -68,10 +70,10 @@ Create a living thing
 ```typescript
 import { Pb } from "petstore";
 
-(async() => {
+async function run() {
   const sdk = new Pb({
     security: {
-      key1: "",
+      key1: "Bearer <YOUR_ACCESS_TOKEN_HERE>",
     },
   });
 
@@ -90,7 +92,9 @@ import { Pb } from "petstore";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -119,10 +123,10 @@ Delete the animal
 ```typescript
 import { Pb } from "petstore";
 
-(async() => {
+async function run() {
   const sdk = new Pb({
     security: {
-      key1: "",
+      key1: "Bearer <YOUR_ACCESS_TOKEN_HERE>",
     },
   });
 
@@ -133,7 +137,9 @@ import { Pb } from "petstore";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -162,10 +168,10 @@ Get Animals Description
 ```typescript
 import { Pb } from "petstore";
 
-(async() => {
+async function run() {
   const sdk = new Pb({
     security: {
-      key1: "",
+      key1: "Bearer <YOUR_ACCESS_TOKEN_HERE>",
     },
   });
 
@@ -174,7 +180,9 @@ import { Pb } from "petstore";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -203,10 +211,10 @@ get All living things data
 ```typescript
 import { Pb } from "petstore";
 
-(async() => {
+async function run() {
   const sdk = new Pb({
     security: {
-      key1: "",
+      key1: "Bearer <YOUR_ACCESS_TOKEN_HERE>",
     },
   });
 
@@ -219,7 +227,9 @@ import { Pb } from "petstore";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -248,10 +258,10 @@ Update the animal object
 ```typescript
 import { Pb } from "petstore";
 
-(async() => {
+async function run() {
   const sdk = new Pb({
     security: {
-      key1: "",
+      key1: "Bearer <YOUR_ACCESS_TOKEN_HERE>",
     },
   });
 
@@ -263,7 +273,9 @@ import { Pb } from "petstore";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters

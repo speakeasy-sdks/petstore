@@ -36,7 +36,6 @@ src/sdk/models/shared/security.ts
 src/sdk/models/errors/index.ts
 src/sdk/models/operations/index.ts
 src/sdk/models/shared/index.ts
-USAGE.md
 docs/sdk/models/operations/createanimalrequestbody.md
 docs/sdk/models/operations/createanimalresponse.md
 docs/sdk/models/operations/createlivingthingsresponse.md
@@ -68,4 +67,5 @@ docs/sdk/models/shared/security.md
 docs/sdks/pb/README.md
 docs/sdks/animals/README.md
 docs/sdks/birds/README.md
+USAGE.md
 .gitattributes
