@@ -32,8 +32,8 @@ async function run() {
 
   const res = await sdk.animals.createAnimal({
     color: "white",
-    id: "<ID>",
-    name: "string",
+    id: "<id>",
+    name: "<value>",
   });
 
   if (res.statusCode == 200) {
@@ -82,11 +82,11 @@ async function run() {
       animal: [
         {},
       ],
-      birds: "string",
-      createdDate: "string",
-      updatedDate: "string",
+      birds: "<value>",
+      createdDate: "<value>",
+      updatedDate: "<value>",
     },
-    meta: "string",
+    meta: "<value>",
   });
 
   if (res.statusCode == 200) {
@@ -131,7 +131,7 @@ async function run() {
   });
 
   const res = await sdk.animals.deleteAnimalsById({
-    id: "<ID>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -220,7 +220,7 @@ async function run() {
 
   const res = await sdk.animals.getAllLivingThings({
     filter: [
-      "string",
+      "<value>",
     ],
   });
 
@@ -267,7 +267,7 @@ async function run() {
 
   const res = await sdk.animals.updateAnimalsById({
     animals: {},
-    id: "<ID>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {

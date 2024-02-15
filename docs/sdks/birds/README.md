@@ -32,11 +32,11 @@ async function run() {
       animal: [
         {},
       ],
-      birds: "string",
-      createdDate: "string",
-      updatedDate: "string",
+      birds: "<value>",
+      createdDate: "<value>",
+      updatedDate: "<value>",
     },
-    meta: "string",
+    meta: "<value>",
   });
 
   if (res.statusCode == 200) {
@@ -91,7 +91,7 @@ async function run() {
       },
     },
     food: [
-      "string",
+      "<value>",
     ],
     location: [
       {
@@ -143,7 +143,7 @@ async function run() {
 
   const res = await sdk.birds.getAllLivingThings({
     filter: [
-      "string",
+      "<value>",
     ],
   });
 

@@ -33,8 +33,8 @@ async function run() {
 
     const res = await sdk.animals.createAnimal({
         color: "white",
-        id: "<ID>",
-        name: "string",
+        id: "<id>",
+        name: "<value>",
     });
 
     if (res.statusCode == 200) {
@@ -97,8 +97,8 @@ async function run() {
     try {
         res = await sdk.animals.createAnimal({
             color: "white",
-            id: "<ID>",
-            name: "string",
+            id: "<id>",
+            name: "<value>",
         });
     } catch (err) {
         if (err instanceof errors.SDKError) {
@@ -146,8 +146,8 @@ async function run() {
 
     const res = await sdk.animals.createAnimal({
         color: "white",
-        id: "<ID>",
-        name: "string",
+        id: "<id>",
+        name: "<value>",
     });
 
     if (res.statusCode == 200) {
@@ -176,8 +176,8 @@ async function run() {
 
     const res = await sdk.animals.createAnimal({
         color: "white",
-        id: "<ID>",
-        name: "string",
+        id: "<id>",
+        name: "<value>",
     });
 
     if (res.statusCode == 200) {
@@ -237,8 +237,8 @@ async function run() {
 
     const res = await sdk.animals.createAnimal({
         color: "white",
-        id: "<ID>",
-        name: "string",
+        id: "<id>",
+        name: "<value>",
     });
 
     if (res.statusCode == 200) {

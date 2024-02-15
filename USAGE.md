@@ -11,8 +11,8 @@ async function run() {
 
     const res = await sdk.animals.createAnimal({
         color: "white",
-        id: "<ID>",
-        name: "string",
+        id: "<id>",
+        name: "<value>",
     });
 
     if (res.statusCode == 200) {
