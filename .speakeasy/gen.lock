@@ -3,17 +3,17 @@ id: e132c12b-d020-4952-a793-0f36d13d6b13
 management:
   docChecksum: 2554149823bfd7b4f9664a81d29a1aea
   docVersion: "1.0"
-  speakeasyVersion: 1.207.1
-  generationVersion: 2.280.6
-  releaseVersion: 2.1.3
-  configChecksum: 55f5dfcdf37d64761f4ee6a26d1a6789
+  speakeasyVersion: 1.213.0
+  generationVersion: 2.283.1
+  releaseVersion: 2.1.4
+  configChecksum: 10ed1028060c94f79a5e1e3edfb5e93a
   repoURL: https://github.com/speakeasy-sdks/petstore.git
   repoSubDirectory: .
   installationURL: https://github.com/speakeasy-sdks/petstore
 features:
   typescript:
     core: 3.4.8
-    globalSecurity: 2.82.4
+    globalSecurity: 2.82.5
     globalServerURLs: 2.82.2
 generatedFiles:
   - src/sdk/animals.ts
